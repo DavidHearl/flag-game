@@ -1,0 +1,26 @@
+* {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+main{
+    width: 50%;
+    margin-left: 25%;
+}
+
+#flag {
+    width: 100%;
+}
+
+img {
+    border: 1px solid black;
+}
+
+.answers{
+    height: 100px;
+    width: 100%;
+    background-color: pink;
+    margin: 2px;
+    border-radius: 5px;
+    text-align: center;
+}
