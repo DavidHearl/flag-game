@@ -1,5 +1,9 @@
 # Flags of the World
 
+## Features
+
+* Added diffculty factory to the arrar. In place to calculate a difficulty rating to segrigation into easy normal hard at a later stage.
+
 ## Creating the array
 To create the array I coppied all of the image files from the directory and inserted them into excel, from there I used the find and replace feature to remove the .png then created a simple calulation to build up a string.
 = "{country:'" & PROPER(A1) & "',image:'" & A1 & "',fact:''},"
