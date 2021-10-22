@@ -247,5 +247,4 @@ var flags = [
     {country:'Wales',image:'wales',difficulty:0.00,fact:''},
     {country:'Wallis And Futuna',image:'wallis-and-futuna',difficulty:0.00,fact:''},
     {country:'Western Sahara',image:'western-sahara',difficulty:0.00,fact:''}
-
 ]
