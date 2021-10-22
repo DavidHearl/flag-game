@@ -1,7 +1,24 @@
 // Run game on page load
 document.addEventListener("DOMContentLoaded", function(){
     runGame()
+    shuffleArray()
 })
+
+/**Shuffles Flag index */
+function shuffleArray() {
+    let currentIndex = flags.length, randomIndex;
+
+    // Shuffles Whole Index
+    while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [flags[currentIndex],flags[randomIndex]] = [flags[randomIndex], flags[currentIndex]]
+    }
+    for (i=0; i<4; i++) {
+        console.log(flags[i].country)
+    } 
+}
 
 function runGame() {
 
@@ -28,6 +45,4 @@ function runGame() {
     document.getElementById("answer2").innerText = options[1];
     document.getElementById("answer3").innerText = options[2];
     document.getElementById("answer4").innerText = options[3];
-
-    console.log("./assets/images")
 }
