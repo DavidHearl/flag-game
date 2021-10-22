@@ -1,16 +1,3 @@
-// Create an array of flags and file names
-let flags = [
-    {country:'Afghanistan',     image:'afghanistan',        fact:''},
-    {country:'Aland Islands',   image:'aland-islands',      fact:''},
-    {country:'Albania',         image:'albania',            fact:''},
-    {country:'Algeria',         image:'algeria',            fact:''},
-    {country:'American Samoa',  image:'american-samoa',     fact:''},
-    {country:'Andorra',         image:'andorra',            fact:''},
-    {country:'Angola',          image:'angola',             fact:''},
-    {country:'Anguilla',        image:'anguilla',           fact:''},
-    {country:'Antarctica',      image:'antarctica',         fact:''}
-]
-
 // Run game on page load
 document.addEventListener("DOMContentLoaded", function(){
     runGame()
@@ -41,4 +28,6 @@ function runGame() {
     document.getElementById("answer2").innerText = options[1];
     document.getElementById("answer3").innerText = options[2];
     document.getElementById("answer4").innerText = options[3];
+
+    console.log("./assets/images")
 }
