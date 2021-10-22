@@ -13,13 +13,17 @@ main{
     width: 50%;
     margin-left: 25%;
 }
+h1 {
+    position: relative;
+    top: 5px;
+}
 #difficulty {
     display: flex;
     flex-direction: row;
     margin: 10px auto;
     width: 65%;
 }
-button{
+.difficulty{
     padding: 10px;
     width: 30%;
     margin: 0 2%;
@@ -35,20 +39,20 @@ label{
 }
 .answers{
     height: 80px;
-    width: 80%;
-    background-color: green;
+    width: 100%;
+    background-color: rgb(33, 105, 212);
+    border: 1px solid black;
     margin-top: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
     color: white;
-    border: none;
 
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: 1px;
 }
 .answers:hover{
-    background-color: blueviolet;
+    background-color: rgb(9, 61, 202);
 }
 footer{
     position: absolute;
@@ -56,4 +60,13 @@ footer{
     width: 100%;
     height: 50px;
     background-color: chocolate;
+}
+@media screen and (max-width: 800px) {
+    main{
+        width: 90%;
+        margin-left: 5%;
+    }
+    img {
+        max-width: 100%;
+    }
 }

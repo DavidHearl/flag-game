@@ -29,3 +29,7 @@ function runGame() {
     let correctAnswer = flags[randomSelection].country
     console.log(correctAnswer)
 }
+
+function checkAnswer() {
+    
+}
