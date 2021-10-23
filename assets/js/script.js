@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function(){
 var correctAnswer;
 
 function runGame() {
+     
+
     var currentIndex = flags.length; //, randomIndex
 
     // Shuffles Whole Index
@@ -31,6 +33,10 @@ function runGame() {
     // Log the correct answer
     correctAnswer = flags[randomSelection].country;
     console.log(correctAnswer)
+
+    for (c=0; c<4; c++) {
+        document.getElementsByClassName("user-choice")[c].style.background = "rgb(48, 121, 230)";
+    }  
 }
 
 function changeColor() {
@@ -41,4 +47,7 @@ function changeColor() {
             document.getElementsByClassName("user-choice")[i].style.background = "Red";
         }
     }   
+    setTimeout(function() {
+        runGame();
+        }, 1500);
 }
