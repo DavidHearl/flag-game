@@ -10,8 +10,8 @@ header {
     margin-bottom: 10px;
 }
 main{
-    width: 50%;
-    margin-left: 25%;
+    width: 60%;
+    margin-left: 20%;
 }
 h1 {
     position: relative;
@@ -32,26 +32,27 @@ h1 {
     width: 100%;
 }
 img {
+    max-width: 100%;
     border: 1px solid black;
 }
 label{
     margin-right: 10px;
 }
-.answers{
+.user-choice{
     height: 80px;
     width: 100%;
-    background-color: rgb(33, 105, 212);
+    background-color: rgb(48, 121, 230);
     border: 1px solid black;
     margin-top: 10px;
     border-radius: 15px;
     text-align: center;
     color: white;
 
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 1.1px;
 }
-.answers:hover{
+.user-choice:hover{
     background-color: rgb(9, 61, 202);
 }
 footer{
@@ -61,12 +62,9 @@ footer{
     height: 50px;
     background-color: chocolate;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     main{
         width: 90%;
         margin-left: 5%;
-    }
-    img {
-        max-width: 100%;
     }
 }

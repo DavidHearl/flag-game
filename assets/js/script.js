@@ -3,33 +3,42 @@ document.addEventListener("DOMContentLoaded", function(){
     runGame()
 })
 
+var correctAnswer;
+
 function runGame() {
-    let currentIndex = flags.length, randomIndex;
+    var currentIndex = flags.length; //, randomIndex
 
     // Shuffles Whole Index
     while (currentIndex != 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
 
-        [flags[currentIndex],flags[randomIndex]] = [flags[randomIndex], flags[currentIndex]]
+        [flags[currentIndex],flags[randomIndex]] = [flags[randomIndex], flags[currentIndex]];
     }
+
     // Assign random selection to answer box
     for (i=0; i<4; i++) {
-        document.getElementsByClassName("answers")[i].innerText = flags[i].country;
+        document.getElementsByClassName("user-choice")[i].innerText = flags[i].country;
     }
-    
+
     // Select a random value from the array above
-    let randomSelection = Math.floor(Math.random() * 4)
+    var randomSelection = Math.floor(Math.random() * 4)
 
     // Open flag using array and random value above
-    let imageLocation = "assets/images/flags/" + flags[randomSelection].image + ".png"
+    var imageLocation = "assets/images/flags/" + flags[randomSelection].image + ".png"
     document.getElementById("flag-image").src = imageLocation
 
-    // Log the correct answer and get 3 incorrect answers
-    let correctAnswer = flags[randomSelection].country
+    // Log the correct answer
+    correctAnswer = flags[randomSelection].country;
     console.log(correctAnswer)
 }
 
-function checkAnswer() {
-    
+function changeColor() {
+    for (i=0; i<4; i++) {
+        if (document.getElementsByClassName("user-choice")[i].innerText === correctAnswer) {
+            document.getElementsByClassName("user-choice")[i].style.background = "Green";
+        } else {
+            document.getElementsByClassName("user-choice")[i].style.background = "Red";
+        }
+    }   
 }

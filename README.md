@@ -11,3 +11,28 @@ To create the array I coppied all of the image files from the directory and inse
 ## Bugs
 
 * One of the initial 'bugs' is with the random selection of the flag. There is a chance that the same flag will be selected back to back. However, The probability of this is very low at 1/64,516 (0.00155%). The issue comes when randomly selecting answers to the question, the probability of 2 values being the same when randomly selecting from the array is at least 2.4%. Running an example 10,000,000 times it returned 3.94%
+
+
+## Notes
+
+# Remember
+* Variable names
+* Information Architecture
+* Splash page required
+* Accesability
+* Usage of web standards
+* 'linter' gitpod
+* add sections to code
+* use loop and dont number varables
+* program defensivly
+* Bug discovery
+
+# Possible features
+* Timer/Time out
+* Data could be in a separate file
+* Restart Feature
+* Add wire frame for read me
+* remove all console.log beofre launch
+* Leader Board
+* Charts (Google)
+* Obsfascate data
