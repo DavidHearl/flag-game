@@ -32,7 +32,7 @@ function runGame() {
 
     // Log the correct answer
     correctAnswer = flags[randomSelection].country;
-    console.log(correctAnswer)
+    //console.log(correctAnswer)
 
     for (c=0; c<4; c++) {
         document.getElementsByClassName("user-choice")[c].style.background = "rgb(48, 121, 230)";
@@ -49,5 +49,22 @@ function changeColor() {
     }   
     setTimeout(function() {
         runGame();
-        }, 1500);
+        }, 1000);
+    updateDifficultyValue()
+}
+
+function updateDifficultyValue() {
+    calc = 1
+    localStorage.setItem('test', calc);
+    console.log(localStorage.getItem('test')); // 1
+
+    //for (i = 0; i < flags.length; i++) {
+    //    localStorage.setItem("country", JSON.stringify(flags[i].country));
+    //    localStorage.setItem("difficulty", JSON.stringify(flags[i].difficulty));
+    //    console.log(localStorage.getItem("country") + " : " + localStorage.getItem("difficulty"))
+    //}
+
+    // How to remove an item from localstorage
+    //window.localStorage.removeItem('country');
+    //window.localStorage.removeItem('difficulty');
 }
