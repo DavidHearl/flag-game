@@ -13,6 +13,22 @@ play.addEventListener("click", function(){
     runGame()
 });
 
+
+let time = 1000;
+
+setInterval(countdown, 10);
+
+function countdown() {
+    let minutes = (time/100)
+    let seconds = time % 100;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    document.getElementById("timer").innerHTML = `${minutes}: ${seconds}`;
+    time--;
+}
+
+
 /**
  * Shuffles flag array and creates a new array of 30 flags.
  */
@@ -51,8 +67,8 @@ function runGame() {
 
     // Sets the correct answer
     correctAnswer = gameFlags[gameNumber].country;
+    document.getElementById("progress-bar").style.width = (gameNumber/29)*100 + "%"
     gameNumber++
-    document.getElementById("progress-bar").style.width = (gameNumber/30)*100 + "%"
     console.log((gameNumber/30)*100)
     //console.log(correctAnswer)
 }
