@@ -1,40 +1,52 @@
 // Run game on page load
 document.addEventListener("DOMContentLoaded", function(){
+    setupGame()
     runGame()
 })
 
 var correctAnswer;
+var gameFlags = []
+let gameNumber = 0
 
-function runGame() {
+let play = document.getElementById("play")
+play.addEventListener("click", function(){
+    runGame()
+});
+
+function setupGame() {
+    // Gets number of items in flag array
+    // Shuffles flags array
     var currentIndex = flags.length;
-
-    // Shuffles Whole Index
     while (currentIndex != 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
         [flags[currentIndex],flags[randomIndex]] = [flags[randomIndex], flags[currentIndex]];
     }
-
-    // Assign random selection to answer box
-    for (i=0; i<5; i++) {
-        document.getElementsByClassName("user-choice")[i].innerText = flags[i].country;
+    // Logs first 20 flags
+    for (i = 0; i<30; i++) {
+        gameFlags.push({country: flags[i].country, image: flags[i].image})
     }
+    console.log(gameFlags)
+}
 
-    // Select a random value from the array above
-    var randomSelection = Math.floor(Math.random() * 5)
-
-    // Open flag using array and random value above
-    var imageLocation = "assets/images/flags/" + flags[randomSelection].image + ".png"
+function runGame() {
+    var imageLocation = "assets/images/flags/" + gameFlags[gameNumber].image + ".png"
     document.getElementById("flag-image").src = imageLocation
 
-    // Log the correct answer
-    correctAnswer = flags[randomSelection].country;
-    //console.log(correctAnswer)
+    // Assigns random values to user-choice from the flag array
+    for (i=0; i<5; i++) {
+        document.getElementsByClassName("user-choice")[i].innerText = flags[Math.floor(Math.random() * flags.length)].country;
+    }
 
-    for (c=0; c<5; c++) {
-        document.getElementsByClassName("user-choice")[c].style.background = "rgb(48, 121, 230)";
-    }  
+    // Assigns the correct answer to a random use choice box
+    let randomSelection = Math.floor(Math.random() * 5)
+    document.getElementsByClassName("user-choice")[randomSelection].innerText = gameFlags[gameNumber].country
+
+    correctAnswer = gameFlags[gameNumber].country;
+    console.log(correctAnswer)
+    gameNumber++
 }
+
 
 function changeColor() {
     for (i=0; i<5; i++) {

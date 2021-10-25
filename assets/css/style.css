@@ -32,13 +32,18 @@ h1 {
 }
 .difficulty{
     padding: 5px;
-    width: 30%;
+    width: 25%;
     margin: 0 1%;
     border: none;
     border: 1px solid black;
     font-weight: 700;
     border-radius: 5px;
     opacity: 0.7;
+}
+#play{
+    width: 25%;
+    border-radius: 5px;
+    border: 1px solid black;
 }
 #easy{background-color: rgb(67, 202, 67);}
 #medium{background-color: orange;}
@@ -96,12 +101,12 @@ footer{
     }
     h1{margin-left: 5%;}
     .user-choice{
-        height: 50px;
+        height: 40px;
         width: 100%;
         border-radius: 10px;
         text-align: center;
     
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-top: 6px;
     }
 }
