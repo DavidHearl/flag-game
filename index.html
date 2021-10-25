@@ -15,17 +15,17 @@
         </nav>
     </header>
     <main>
-        <!--<label>Name</label><input>-->
+        <label>Enter Name:</label><input>
+
         <div id="difficulty">
-            <label>Difficulty</label>
-            <button class="difficulty" id="easy">Easy</button>
-            <button class="difficulty" id="medium">Medium</button>
-            <button class="difficulty" id="hard">Hard</button>
+            <button class="difficulty" id="easy" onclick="easy()">Easy</button>
+            <button class="difficulty" id="medium" onclick="medium()">Medium</button>
+            <button class="difficulty" id="hard" onclick="hard()">Hard</button>
+            <button>Play</button>
         </div>
-        <div class="score-area">
-            <p class="scores"><span>0</span></p>
-            <p class="scores"><span>0</span></p>
-        </div>
+
+        <p class="scores">Score: <span id="score">0</span><span>/20</span></p>
+        
         <div id="flag">
             <img id="flag-image" src="">
         </div>

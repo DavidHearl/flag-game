@@ -43,9 +43,29 @@ function changeColor() {
         } else {
             document.getElementsByClassName("user-choice")[i].style.background = "Red";
         }
-    }   
+    }
+    updateScores();
     setTimeout(function() {
         runGame();
-        }, 800);
-    updateDifficultyValue()
+    }, 800);
+}
+function updateScores() {
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
+}
+
+function easy() {
+    document.getElementById("easy").style.opacity = "1";
+    document.getElementById("medium").style.opacity = "0.5";
+    document.getElementById("hard").style.opacity = "0.5";
+}
+function medium() {
+    document.getElementById("easy").style.opacity = "0.5";
+    document.getElementById("medium").style.opacity = "1";
+    document.getElementById("hard").style.opacity = "0.5";
+}
+function hard() {
+    document.getElementById("easy").style.opacity = "0.5";
+    document.getElementById("medium").style.opacity = "0.5";
+    document.getElementById("hard").style.opacity = "1";
 }
