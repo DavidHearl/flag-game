@@ -34,7 +34,8 @@ function setupGame() {
 
 function runGame() {
     for (i=0; i<5; i++) {
-    document.getElementsByClassName("user-choice")[i].style.background = "rgb(48, 121, 230)";}
+    document.getElementsByClassName("user-choice")[i].style.background = "rgb(48, 121, 230)";
+    }
     
     var imageLocation = "assets/images/flags/" + gameFlags[gameNumber].image + ".png"
     document.getElementById("flag-image").src = imageLocation
@@ -51,6 +52,8 @@ function runGame() {
     // Sets the correct answer
     correctAnswer = gameFlags[gameNumber].country;
     gameNumber++
+    document.getElementById("progress-bar").style.width = (gameNumber/30)*100 + "%"
+    console.log((gameNumber/30)*100)
     //console.log(correctAnswer)
 }
 
@@ -62,30 +65,23 @@ function changeColor() {
             document.getElementsByClassName("user-choice")[i].style.background = "Red";
         }
     }
-    updateScores();
     setTimeout(function() {
         runGame();
-    }, 800);
-}
-
-
-function updateScores() {
-    let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++oldScore;
+    }, 750);
 }
 
 function easy() {
     document.getElementById("easy").style.opacity = "1";
-    document.getElementById("medium").style.opacity = "0.5";
-    document.getElementById("hard").style.opacity = "0.5";
+    document.getElementById("medium").style.opacity = "0.3";
+    document.getElementById("hard").style.opacity = "0.3";
 }
 function medium() {
-    document.getElementById("easy").style.opacity = "0.5";
+    document.getElementById("easy").style.opacity = "0.3";
     document.getElementById("medium").style.opacity = "1";
-    document.getElementById("hard").style.opacity = "0.5";
+    document.getElementById("hard").style.opacity = "0.3";
 }
 function hard() {
-    document.getElementById("easy").style.opacity = "0.5";
-    document.getElementById("medium").style.opacity = "0.5";
+    document.getElementById("easy").style.opacity = "0.3";
+    document.getElementById("medium").style.opacity = "0.3";
     document.getElementById("hard").style.opacity = "1";
 }
