@@ -13,6 +13,9 @@ play.addEventListener("click", function(){
     runGame()
 });
 
+/**
+ * Shuffles flag array and creates a new array of 30 flags.
+ */
 function setupGame() {
     // Gets number of items in flag array
     // Shuffles flags array
@@ -30,6 +33,9 @@ function setupGame() {
 }
 
 function runGame() {
+    for (i=0; i<5; i++) {
+    document.getElementsByClassName("user-choice")[i].style.background = "rgb(48, 121, 230)";}
+    
     var imageLocation = "assets/images/flags/" + gameFlags[gameNumber].image + ".png"
     document.getElementById("flag-image").src = imageLocation
 
@@ -42,11 +48,11 @@ function runGame() {
     let randomSelection = Math.floor(Math.random() * 5)
     document.getElementsByClassName("user-choice")[randomSelection].innerText = gameFlags[gameNumber].country
 
+    // Sets the correct answer
     correctAnswer = gameFlags[gameNumber].country;
-    console.log(correctAnswer)
     gameNumber++
+    //console.log(correctAnswer)
 }
-
 
 function changeColor() {
     for (i=0; i<5; i++) {
@@ -61,6 +67,8 @@ function changeColor() {
         runGame();
     }, 800);
 }
+
+
 function updateScores() {
     let oldScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++oldScore;
