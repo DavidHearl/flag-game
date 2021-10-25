@@ -6,15 +6,12 @@ document.addEventListener("DOMContentLoaded", function(){
 var correctAnswer;
 
 function runGame() {
-     
-
-    var currentIndex = flags.length; //, randomIndex
+    var currentIndex = flags.length;
 
     // Shuffles Whole Index
     while (currentIndex != 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
-
         [flags[currentIndex],flags[randomIndex]] = [flags[randomIndex], flags[currentIndex]];
     }
 
@@ -49,22 +46,6 @@ function changeColor() {
     }   
     setTimeout(function() {
         runGame();
-        }, 1000);
+        }, 800);
     updateDifficultyValue()
-}
-
-function updateDifficultyValue() {
-    calc = 1
-    localStorage.setItem('test', calc);
-    console.log(localStorage.getItem('test')); // 1
-
-    //for (i = 0; i < flags.length; i++) {
-    //    localStorage.setItem("country", JSON.stringify(flags[i].country));
-    //    localStorage.setItem("difficulty", JSON.stringify(flags[i].difficulty));
-    //    console.log(localStorage.getItem("country") + " : " + localStorage.getItem("difficulty"))
-    //}
-
-    // How to remove an item from localstorage
-    //window.localStorage.removeItem('country');
-    //window.localStorage.removeItem('difficulty');
 }

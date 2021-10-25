@@ -10,19 +10,26 @@
 <body>
     <header>
         <h1>GameCentral</h1>
-        <h2><a>Flags</a></h2>
+        <nav>
+            <a>Flags</a>
+        </nav>
     </header>
     <main>
         <!--<label>Name</label><input>-->
-        <!--<div id="difficulty">
-            <button class="difficulty">Easy</button>
-            <button class="difficulty">Medium</button>
-            <button class="difficulty">Hard</button>
-        </div>-->
+        <div id="difficulty">
+            <label>Difficulty</label>
+            <button class="difficulty" id="easy">Easy</button>
+            <button class="difficulty" id="medium">Medium</button>
+            <button class="difficulty" id="hard">Hard</button>
+        </div>
+        <div class="score-area">
+            <p class="scores"><span>0</span></p>
+            <p class="scores"><span>0</span></p>
+        </div>
         <div id="flag">
             <img id="flag-image" src="">
         </div>
-        <p>Random Fact</p>
+        <!--<p>Random Fact</p>-->
         <button class="user-choice" onclick="changeColor()"></button>
         <button class="user-choice" onclick="changeColor()"></button>
         <button class="user-choice" onclick="changeColor()"></button>
