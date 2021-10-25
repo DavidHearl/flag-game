@@ -19,12 +19,12 @@ function runGame() {
     }
 
     // Assign random selection to answer box
-    for (i=0; i<4; i++) {
+    for (i=0; i<5; i++) {
         document.getElementsByClassName("user-choice")[i].innerText = flags[i].country;
     }
 
     // Select a random value from the array above
-    var randomSelection = Math.floor(Math.random() * 4)
+    var randomSelection = Math.floor(Math.random() * 5)
 
     // Open flag using array and random value above
     var imageLocation = "assets/images/flags/" + flags[randomSelection].image + ".png"
@@ -34,13 +34,13 @@ function runGame() {
     correctAnswer = flags[randomSelection].country;
     //console.log(correctAnswer)
 
-    for (c=0; c<4; c++) {
+    for (c=0; c<5; c++) {
         document.getElementsByClassName("user-choice")[c].style.background = "rgb(48, 121, 230)";
     }  
 }
 
 function changeColor() {
-    for (i=0; i<4; i++) {
+    for (i=0; i<5; i++) {
         if (document.getElementsByClassName("user-choice")[i].innerText === correctAnswer) {
             document.getElementsByClassName("user-choice")[i].style.background = "Green";
         } else {
