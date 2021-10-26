@@ -1,5 +1,18 @@
 # Flags of the World
 
+## Design
+
+Due to the game type and simplicity the main user base will be on the mobile platform. Therefore it is best to optimise the layout for this platform this platform.
+
+![Mobile Home Page](./assets/images/readme/mobile-homepage.JPG)
+![Home page content](./assets/images/readme/mobile-flag-game.JPG)
+
+![Home page content](./assets/images/readme/ipad-homepage.JPG)
+![Home page content](./assets/images/readme/ipad-flag-game.JPG)
+
+![Home page content](./assets/images/readme/desktop-homepage.JPG)
+![Home page content](./assets/images/readme/desktop-flag-game.JPG)
+
 ## Features
 
 * Added diffculty factory to the arrar. In place to calculate a difficulty rating to segrigation into easy normal hard at a later stage.
