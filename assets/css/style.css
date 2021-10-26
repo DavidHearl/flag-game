@@ -13,6 +13,9 @@ header {
     border-bottom: 2px solid gray;
     z-index: 100;
 }
+body{
+    max-width: 1500px;
+}
 nav {margin-left: 20%;}
 select{
     margin-top: 20px;
@@ -27,42 +30,66 @@ h1 {
     margin-top: 3px;
     margin-left: 20%;
 }
-h2 {text-align: center;}
+h2 {
+    margin-top: 10px;
+    text-align: center;
+}
+h3 {
+    margin: 5px 0 0 10px;
+}
+
 main{
     position: relative;
     top: 45px;
     width: 60%;
     margin-left: 20%;
-    border: solid 1px black;
     max-width: 900px;
 }
 .difficulty-pair{
     display: flex;
     flex-direction: row;
     margin-top: 20px;
-    border: 1px solid blue;
-}
-.difficulty-chunk {
-    width: 47.5%;
-}
-#right-chunk{
-    margin-left:10%
-}
-h3 {
-    border: 1px solid red;
 }
 .difficulty-box {
-    height: 200px;
     width: 100%;
-    border: 1px solid black;
-    border-radius: 5px;
+    height: 300px;
+    border: 1px solid lightblue;
+    border-radius: 10px;
 }
+#difficulty-medium, #difficulty-extreme{
+    margin-left:5%
+}
+#difficulty-easy{background-color: green;}
+#difficulty-medium{background-color: orange;}
+#difficulty-hard{background-color: red;}
+#difficulty-extreme{
+    background-color: black;
+    color: white;
+}
+
 #play-button{
     margin: 20px 0;
     height: 50px;
     width: 100%;
     font-weight: 800;
     font-size: 2rem;
+    border-radius: 10px;
+}
+#easy-flag{
+    background: url(../images/flags/afghanistan.png) no-repeat center center;
+    background-size: cover;
+    height: 100%;
+}
+#metrics{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+#leaderboard, #average-score{
+    width: 200px;
+    height: 200px;
+    background-color: violet;
+    border: 1px solid black;
 }
 
 /*nav > a {
