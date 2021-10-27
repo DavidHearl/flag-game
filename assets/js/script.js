@@ -50,7 +50,7 @@ function setupGame() {
 
 function runGame() {
     for (i=0; i<5; i++) {
-    document.getElementsByClassName("user-choice")[i].style.background = "rgb(48, 121, 230)";
+    document.getElementsByClassName("user-choice")[i].style.background = "white";
     }
     
     var imageLocation = "assets/images/flags/" + gameFlags[gameNumber].image + ".png"

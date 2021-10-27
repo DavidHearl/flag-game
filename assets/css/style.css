@@ -4,8 +4,10 @@
     padding: 0;
 }
 body{
-    max-width: 1200px;
-    background-image: linear-gradient(45deg, #459acc, #5c8adf);
+    background-color: #2a2a72;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2a2a72), to(#009ffd)) fixed;
+    /*background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);*/
+    background-repeat: no-repeat;
 }
 header {
     display: flex;
@@ -17,13 +19,11 @@ header {
 }
 main{
     width: 70%;
-    margin-left: 15%;
-    /*margin-top: -50px;*/
+    margin: 0 auto;
+    max-width: 1200px;
 }
-nav ul {
-    display: inline-block;
-    margin-left: 15%;
-    list-style: none;
+nav {
+    margin: 0 auto;
 }
 h1 {
     color: white;
@@ -45,9 +45,7 @@ h3 {
 }
 main{
     position: relative;
-    top: 45px;
-    width: 60%;
-    margin-left: 20%;
+    top: 5px;
     max-width: 900px;
 }
 #choose-difficulty{
@@ -94,16 +92,14 @@ main{
     background-color: white;
     cursor: pointer;
 }
+/*Background color in js file*/
 .user-choice {
-    margin: 20px 0;
+    margin: 8px 0;
     height: 50px;
     width: 100%;
     font-weight: 800;
     font-size: 2rem;
     border-radius: 10px;
-    border: none;
-    box-shadow: #15750d;
-    background-color: white;
     cursor: pointer; 
 }
 #play-button a:link, #play-button a:visited{
@@ -153,10 +149,10 @@ label{
     margin-right: 10px;
 }
 .scores{
-    color: blueviolet;
+    color: white;
     text-align: center;
     margin-bottom: 5px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 @media screen and (max-width: 800px) {
