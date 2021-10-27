@@ -87,17 +87,26 @@ function changeColor() {
 }
 
 function easy() {
-    document.getElementById("easy").style.opacity = "1";
-    document.getElementById("medium").style.opacity = "0.3";
-    document.getElementById("hard").style.opacity = "0.3";
+    document.getElementById("difficulty-easy").style.opacity = "1";
+    document.getElementById("difficulty-medium").style.opacity = "0.3";
+    document.getElementById("difficulty-hard").style.opacity = "0.3";
+    document.getElementById("difficulty-extreme").style.opacity = "0.3";
 }
 function medium() {
-    document.getElementById("easy").style.opacity = "0.3";
-    document.getElementById("medium").style.opacity = "1";
-    document.getElementById("hard").style.opacity = "0.3";
+    document.getElementById("difficulty-easy").style.opacity = "0.3";
+    document.getElementById("difficulty-medium").style.opacity = "1";
+    document.getElementById("difficulty-hard").style.opacity = "0.3";
+    document.getElementById("difficulty-extreme").style.opacity = "0.3";
 }
 function hard() {
-    document.getElementById("easy").style.opacity = "0.3";
-    document.getElementById("medium").style.opacity = "0.3";
-    document.getElementById("hard").style.opacity = "1";
+    document.getElementById("difficulty-easy").style.opacity = "0.3";
+    document.getElementById("difficulty-medium").style.opacity = "0.3";
+    document.getElementById("difficulty-hard").style.opacity = "1";
+    document.getElementById("difficulty-extreme").style.opacity = "0.3";
+}
+function extreme() {
+    document.getElementById("difficulty-easy").style.opacity = "0.3";
+    document.getElementById("difficulty-medium").style.opacity = "0.3";
+    document.getElementById("difficulty-hard").style.opacity = "0.3";
+    document.getElementById("difficulty-extreme").style.opacity = "1";
 }
