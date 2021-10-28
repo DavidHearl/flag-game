@@ -1,7 +1,9 @@
 // Run game on page load
+
 document.addEventListener("DOMContentLoaded", function(){
     setupGame()
     runGame()
+    runTimer()
 })
 
 var correctAnswer;
@@ -13,21 +15,19 @@ play.addEventListener("click", function(){
     runGame()
 });
 
+function runTimer() {
+    let time = 10;
+    let downloadTimer = setInterval(function(){
 
-let time = 1000;
-
-setInterval(countdown, 10);
-
-function countdown() {
-    let minutes = (time/100)
-    let seconds = time % 100;
-
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    document.getElementById("timer").innerHTML = `${minutes}: ${seconds}`;
-    time--;
+    if(time <= 0){
+        clearInterval(downloadTimer);
+        document.getElementById("timer").innerHTML = "0.00";
+    } else {
+        document.getElementById("timer").innerHTML = time.toFixed(2);
+    }
+    time -= 0.01;
+    }, 10);
 }
-
 
 /**
  * Shuffles flag array and creates a new array of 30 flags.
