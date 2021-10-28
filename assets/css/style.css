@@ -1,50 +1,55 @@
-* {
+/*Set font, remove default padding and margins, set global color to white*/
+*{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: white;
 }
+/*Set Background gradient and color*/
 body{
     background-color: #2a2a72;
     background: -webkit-gradient(linear, left top, left bottom, from(#2a2a72), to(#009ffd)) fixed;
-    /*background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);*/
     background-repeat: no-repeat;
 }
-header {
-    display: flex;
-    flex-direction: row;
+/*Set header size and position, also add underline to header to separate sections*/
+header{
+    text-align: center;
     width: 100%;
     height: 40px;
     z-index: 100;
     border-bottom: 2px solid white;
 }
-main{
-    width: 70%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-nav {
-    margin: 0 auto;
-}
+/*Set font styles and spacing*/
 h1 {
-    color: white;
     font-weight: 800;
     margin-top: 3px;
     font-size: 1.8rem;
 }
-h2 {
-    color: white;
-    font-size: 1.6rem;
+/*Align content to center above difficulty divs*/
+#page-heading{text-align: center;}
+/*Set responsive and max width, center main*/
+main{
+    width: 70%;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    top: 5px;
 }
+/*Set font size and spacing*/
+h2 {font-size: 1.6rem;}
 h3 {
+    font-size: 1.4rem;
     margin: 5px 0 10px 5px;
+    color: black;
 }
-h4 {
-    color: white;
+/*Set timer size and position*/
+#timer {
     font-size: 1.5rem;
     position: relative;
-    margin-top: 15px;
     text-align: center;
+    margin-top: 15px;
 }
+/*Set the border, spacing and color for the timer*/
 #timer-border{
     float:right;
     height: 60px;
@@ -54,15 +59,8 @@ h4 {
     bottom: 20px;
     border-radius: 30px;
 }
-.difficulty-box:hover{
-    opacity: .8;
-    cursor: pointer;
-}
-main{
-    position: relative;
-    top: 5px;
-    max-width: 900px;
-}
+
+/*Settings for all home page difficulty boxes*/
 .difficulty-pair{
     display: flex;
     flex-direction: row;
@@ -75,17 +73,19 @@ main{
     border: 2px solid white;
     border-radius: 10px;
 }
-#difficulty-box:hover{
-    background-color: white;
-}
-#difficulty-medium, #difficulty-extreme{
-    margin-left:5%
-}
+#difficulty-medium, #difficulty-extreme{margin-left:5%}
 #difficulty-easy{background-image: linear-gradient(135deg, #98ff98, #15750d);}
 #difficulty-medium{background-image: linear-gradient(135deg, #fffd98, #d4e20f);}
 #difficulty-hard{background-image: linear-gradient(135deg, #ffa798, #bd1111);}
 #difficulty-extreme{background-image: linear-gradient(135deg, #a7a7a7, #171817);}
-#choose-difficulty, #play-button{
+/*Set max width and height of image so they don't leak out of a div*/
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/*Set play button styles*/
+#play-button{ /*#choose-difficulty was removes from here*/
     margin: 20px 0;
     height: 50px;
     width: 100%;
@@ -96,16 +96,8 @@ main{
     background-color: white;
     cursor: pointer;
 }
-#choose-difficulty{
-    height: 30px;
-    color: black;
-}
-label{
-    margin-top: 10px;
-    color: white;
-}
-/*Background color in js file*/
-.user-choice {
+/*Set answer buttons on flag game page*/
+.user-choice {  /*Background color in js file*/
     margin: 8px 0;
     height: 50px;
     width: 100%;
@@ -114,59 +106,29 @@ label{
     border-radius: 10px;
     cursor: pointer; 
 }
+/*Remove link stylign from play button*/
 #play-button a:link, #play-button a:visited{
     color: rgb(62, 125, 197);
     text-decoration: none;
 }
-#play-button:hover {
-    box-shadow: none;
-    color: gray;
-}
-#easy-flag{
-    background: url(../images/flags/afghanistan.png) no-repeat center center;
-    background-size: cover;
-    height: 100%;
-}
-#metrics{
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-}
-#leaderboard, #average-score{
-    width: 200px;
-    height: 200px;
-    background-color: violet;
-    border: 1px solid black;
-}
-img{
-    max-width: 100%;
-    height: auto;
-}
+/*Progress bar styling, added width so it finishes at the correct spot*/
 #progress-bar{
     background-color: rgb(255, 255, 255);
     width: 1%;
     height: 15px;
     border-radius: 7.5px;
-}
-.score-area{
-    display: flex;
-    flex-direction: row;
+    margin-bottom: 5px;
 }
 #flag {
     /*max-width: 100%;*/
     max-height: 500px;
     text-align: center;
 }
-label{
-    margin-right: 10px;
-}
 .scores{
-    color: white;
     text-align: center;
     margin-bottom: 5px;
     font-size: 1.8rem;
 }
-
 @media screen and (max-width: 800px) {
     main{
         width: 90%;
