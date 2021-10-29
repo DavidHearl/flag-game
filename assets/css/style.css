@@ -19,6 +19,8 @@ header{
     z-index: 100;
     border-bottom: 2px solid white;
 }
+/*Removes link styling*/
+a:link, a:visited{text-decoration: none;}
 /*Set font styles and spacing*/
 h1 {
     font-weight: 800;
@@ -26,7 +28,11 @@ h1 {
     font-size: 1.8rem;
 }
 /*Align content to center above difficulty divs*/
-#page-heading{text-align: center;}
+#page-heading{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
 /*Set responsive and max width, center main*/
 main{
     width: 70%;
@@ -36,11 +42,28 @@ main{
     top: 5px;
 }
 /*Set font size and spacing*/
-h2 {font-size: 1.6rem;}
+h2 {
+    font-size: 1.6rem;
+    margin: 10px 0 5px 0;
+}
 h3 {
     font-size: 1.4rem;
     margin: 5px 0 10px 5px;
     color: black;
+}
+/*Label and input styling*/
+label{
+    font-size: 1.5rem;
+    margin: 10px 0 5px 0;
+}
+input{
+    font-size: 1.6rem;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
 }
 /*Set timer size and position*/
 #timer {
@@ -56,7 +79,7 @@ h3 {
     width: 60px;
     border: 2px solid rgb(39, 231, 13);
     position: relative;
-    bottom: 20px;
+    bottom: 35px;
     border-radius: 30px;
 }
 
@@ -64,7 +87,7 @@ h3 {
 .difficulty-pair{
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
+    margin: 5px 0 20px 0;
 }
 .difficulty-box {
     width: 100%;
@@ -86,7 +109,6 @@ img{
 
 /*Set play button styles*/
 #play-button{ /*#choose-difficulty was removes from here*/
-    margin: 20px 0;
     height: 50px;
     width: 100%;
     font-weight: 800;
@@ -105,12 +127,11 @@ img{
     font-size: 2rem;
     border-radius: 10px;
     cursor: pointer; 
-}
-/*Remove link stylign from play button*/
-#play-button a:link, #play-button a:visited{
     color: rgb(62, 125, 197);
-    text-decoration: none;
+    border: none;
 }
+/*Set color for play button*/
+#play-button a:link, #play-button a:visited{color: rgb(62, 125, 197);}
 /*Progress bar styling, added width so it finishes at the correct spot*/
 #progress-bar{
     background-color: rgb(255, 255, 255);
@@ -120,16 +141,16 @@ img{
     margin-bottom: 5px;
 }
 #flag {
-    /*max-width: 100%;*/
     max-height: 500px;
     text-align: center;
 }
 .scores{
     text-align: center;
-    margin-bottom: 5px;
+    position: relative;
     font-size: 1.8rem;
+    left: 30px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
     main{
         width: 90%;
         margin-left: 5%;
@@ -137,15 +158,45 @@ img{
     h1{margin-left: 5%;}
     h2 {font-size: 1rem;}
     .user-choice{
-        height: 40px;
+        height: 30px;
         width: 100%;
         border-radius: 10px;
         text-align: center;
     
         font-size: 1rem;
-        margin-top: 6px;
+        margin-top: 2px;
     }
-    #choose-difficulty{
-        margin: 4px 0;
+    .scores{
+        font-size: 1.4rem;
+        left: 20px;
+    }
+    #timer{
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+    #timer-border{
+        height: 40px;
+        width: 40px;
+        bottom: 25px;
+        border-radius: 25px;
+    }
+    #flag{
+        margin-bottom: 5px;
+    }
+    label{
+        font-size: 1.2rem;
+        margin: 5px 0 5px 0;
+    }
+    input{
+        font-size: 1.3rem;
+        width: 70%;
+    }
+    h3{
+        font-size: 1.1rem;
+        margin: 2px 0 8px 4px;
+    }
+    img{
+        position: relative;
+        bottom: 6px;
     }
 }
