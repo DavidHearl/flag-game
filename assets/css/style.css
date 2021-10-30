@@ -35,7 +35,7 @@ h1 {
 }
 /*Set responsive and max width, center main*/
 main{
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
     max-width: 1200px;
     position: relative;
@@ -48,13 +48,13 @@ h2 {
 }
 h3 {
     font-size: 1.4rem;
-    margin: 5px 0 10px 5px;
+    margin: 2px 0 10px 5px;
     color: black;
 }
 /*Label and input styling*/
 label{
     font-size: 1.5rem;
-    margin: 10px 0 5px 0;
+    margin: 5px 0 5px 0;
 }
 input{
     font-size: 1.6rem;

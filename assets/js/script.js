@@ -1,11 +1,18 @@
 // Run game on page load
 
-document.addEventListener("DOMContentLoaded", function(){
+/*document.addEventListener("DOMContentLoaded", function(){
     setupGame()
     runGame()
     runTimer()
-})
+})*/
 
+trail = document.getElementsByClassName("difficulty-box");
+
+trail[0].addEventListener('click', function() {
+    alert("Hello World!");
+});
+
+/*
 var correctAnswer;
 var gameFlags = []
 let gameNumber = 0
@@ -29,9 +36,10 @@ function runTimer() {
     }, 10);
 }
 
-/**
- * Shuffles flag array and creates a new array of 30 flags.
- */
+
+
+// Shuffles flag array and creates a new array of 30 flags.
+
 function setupGame() {
     // Gets number of items in flag array
     // Shuffles flags array
@@ -109,4 +117,4 @@ function extreme() {
     document.getElementById("difficulty-medium").style.opacity = "0.3";
     document.getElementById("difficulty-hard").style.opacity = "0.3";
     document.getElementById("difficulty-extreme").style.opacity = "1";
-}
+}*/
