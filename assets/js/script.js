@@ -1,16 +1,37 @@
 // Run game on page load
-
-/*document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function(){
     setupGame()
     runGame()
     runTimer()
-})*/
+})
 
-trail = document.getElementsByClassName("difficulty-box");
+// Turns difficulty boxes opaque
+hover = document.getElementsByClassName("difficulty-box");
+hover[0].addEventListener("mouseover", function() {
+    hover[0].style.opacity = "1";
+    hover[1].style.opacity = "0.5";
+    hover[2].style.opacity = "0.5";
+    hover[3].style.opacity = "0.5";
+})
+hover[1].addEventListener("mouseover", function() {
+    hover[0].style.opacity = "0.5";
+    hover[1].style.opacity = "1";
+    hover[2].style.opacity = "0.5";
+    hover[3].style.opacity = "0.5";
+})
+hover[2].addEventListener("mouseover", function() {
+    hover[0].style.opacity = "0.5";
+    hover[1].style.opacity = "0.5";
+    hover[2].style.opacity = "1";
+    hover[3].style.opacity = "0.5";
+})
+hover[3].addEventListener("mouseover", function() {
+    hover[0].style.opacity = "0.5";
+    hover[1].style.opacity = "0.5";
+    hover[2].style.opacity = "0.5";
+    hover[3].style.opacity = "1";
+})
 
-trail[0].addEventListener('click', function() {
-    alert("Hello World!");
-});
 
 /*
 var correctAnswer;
