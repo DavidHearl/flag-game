@@ -7,28 +7,28 @@ document.addEventListener("DOMContentLoaded", function(){
 
 // Turns difficulty boxes opaque
 hover = document.getElementsByClassName("difficulty-box");
-hover[0].addEventListener("mouseover", function() {
+hover[0].addEventListener("click", function() {
     hover[0].style.opacity = "1";
-    hover[1].style.opacity = "0.5";
-    hover[2].style.opacity = "0.5";
-    hover[3].style.opacity = "0.5";
+    hover[1].style.opacity = "0.4";
+    hover[2].style.opacity = "0.4";
+    hover[3].style.opacity = "0.4";
 })
-hover[1].addEventListener("mouseover", function() {
-    hover[0].style.opacity = "0.5";
+hover[1].addEventListener("click", function() {
+    hover[0].style.opacity = "0.4";
     hover[1].style.opacity = "1";
-    hover[2].style.opacity = "0.5";
-    hover[3].style.opacity = "0.5";
+    hover[2].style.opacity = "0.4";
+    hover[3].style.opacity = "0.4";
 })
-hover[2].addEventListener("mouseover", function() {
-    hover[0].style.opacity = "0.5";
-    hover[1].style.opacity = "0.5";
+hover[2].addEventListener("click", function() {
+    hover[0].style.opacity = "0.4";
+    hover[1].style.opacity = "0.4";
     hover[2].style.opacity = "1";
-    hover[3].style.opacity = "0.5";
+    hover[3].style.opacity = "0.4";
 })
-hover[3].addEventListener("mouseover", function() {
-    hover[0].style.opacity = "0.5";
-    hover[1].style.opacity = "0.5";
-    hover[2].style.opacity = "0.5";
+hover[3].addEventListener("click", function() {
+    hover[0].style.opacity = "0.4";
+    hover[1].style.opacity = "0.4";
+    hover[2].style.opacity = "0.4";
     hover[3].style.opacity = "1";
 })
 

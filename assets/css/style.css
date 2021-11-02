@@ -93,14 +93,33 @@ input{
     width: 100%;
     height: 0;
     padding-bottom: 42%;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 10px;
+    position: relative;
+}
+.difficulty-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    transition: .1s;
+    z-index: -1;
+    background-color: #ffee10;
+}
+.difficulty-box:hover::before {
+    transform: scale(1.025);
+    box-shadow: 0 0 12px #ffee10;
+}
+.difficulty-box:hover {
+    color: #ffee10;
+    box-shadow: 0 0 4px #ffee10;
 }
 #difficulty-medium, #difficulty-extreme{margin-left:5%}
-#difficulty-easy{background-image: linear-gradient(135deg, #98ff98, #15750d);}
-#difficulty-medium{background-image: linear-gradient(135deg, #fffd98, #d4e20f);}
-#difficulty-hard{background-image: linear-gradient(135deg, #ffa798, #bd1111);}
-#difficulty-extreme{background-image: linear-gradient(135deg, #a7a7a7, #171817);}
+#difficulty-easy{background-image: linear-gradient(135deg, #95ff95, #15750d);}
+#difficulty-medium{background-image: linear-gradient(135deg, #ffbb83, #e67f0a);}
+#difficulty-hard{background-image: linear-gradient(135deg, #fd9b8a, #bd1111);}
+#difficulty-extreme{background-image: linear-gradient(135deg, #949494, #101110);}
 /*Set max width and height of image so they don't leak out of a div*/
 img{
     max-width: 100%;
@@ -150,7 +169,7 @@ img{
     font-size: 1.8rem;
     left: 30px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     main{
         width: 90%;
         margin-left: 5%;
