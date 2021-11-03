@@ -10,13 +10,18 @@ body{
     background-color: #2a2a72;
     background: -webkit-gradient(linear, left top, left bottom, from(#2a2a72), to(#009ffd)) fixed;
     background-repeat: no-repeat;
+    z-index: 0;
+}
+section{
+    position: absolute;
+    z-index: -1;
+    /*opacity: 0;*/
 }
 /*Set header size and position, also add underline to header to separate sections*/
 header{
     text-align: center;
     width: 100%;
     height: 40px;
-    z-index: 100;
     border-bottom: 2px solid white;
 }
 /*Removes link styling*/
@@ -126,15 +131,16 @@ img{
 }
 
 /*Set play button styles*/
-#play-button{ /*#choose-difficulty was removes from here*/
-    height: 50px;
+#select-difficulty{ /*#choose-difficulty was removes from here*/
+    height: 25px;
     width: 100%;
     font-weight: 800;
-    font-size: 2rem;
-    border-radius: 10px;
+    font-size: 1.4rem;
+    border-radius: 5px;
     border: none;
     background-color: white;
     cursor: pointer;
+    color: rgb(62, 125, 197);
 }
 /*Set answer buttons on flag game page*/
 .user-choice {  /*Background color in js file*/
@@ -148,8 +154,6 @@ img{
     color: rgb(62, 125, 197);
     border: none;
 }
-/*Set color for play button*/
-#play-button a:link, #play-button a:visited{color: rgb(62, 125, 197);}
 /*Progress bar styling, added width so it finishes at the correct spot*/
 #progress-bar{
     background-color: rgb(255, 255, 255);

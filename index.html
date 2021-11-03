@@ -7,14 +7,36 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <title>Game Central</title>
     </head>
+
     <body>
         <header>
             <nav>
-                <a href="/flag-game.html"><h1>GameCentral</h1></a>
+                <h1>GameCentral</h1>
             </nav>
         </header>
-        
+    
         <main>
+            <button id="select-difficulty">Select Difficulty</button> 
+            <h2>Flags of the World - Difficulty</h2>
+            <div id="timer-border">
+                <p id="timer">9.99</p>                     
+            </div>
+            
+            <p class="scores">Score: <span id="score">0</span><span>/30</span></p>
+            
+            <div id="progress-bar"></div>
+            <div id="flag">
+                <img id="flag-image" src="">
+            </div>
+
+            <button class="user-choice" onclick="changeColor()"></button>
+            <button class="user-choice" onclick="changeColor()"></button>
+            <button class="user-choice" onclick="changeColor()"></button>
+            <button class="user-choice" onclick="changeColor()"></button>
+            <button class="user-choice" onclick="changeColor()"></button>
+        </main>
+
+        <section id="difficulty-menu">
             <div id="page-heading">
                 <label>What is your name?</label>
                 <input>
@@ -42,9 +64,7 @@
                     <img src="/assets/images/flag-difficulties/Extreme.png">
                 </div>
             </div>
-
-            <button id="play-button"><a href="flag-game.html">Give me something random !</a></button> 
-        </main>
+        </section>
 
         <script src="assets/js/flag-array.js"></script>
         <script src="assets/js/script.js"></script>
