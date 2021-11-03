@@ -105,11 +105,10 @@ input{
     border-radius: 12px;
     transition: .1s;
     z-index: -1;
-    background-color: #ffee10;
 }
 .difficulty-box:hover::before {
-    transform: scale(1.025);
-    box-shadow: 0 0 12px #ffee10;
+    /*transform: scale(1.025);*/
+    box-shadow: 0 0 20px #ffee10;
 }
 .difficulty-box:hover {
     color: #ffee10;
