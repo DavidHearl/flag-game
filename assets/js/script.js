@@ -1,7 +1,7 @@
 // Run game on page load
 document.addEventListener("DOMContentLoaded", function(){
     setupGame()
-    //runTimer()
+    timer()
     runGame()
 })
 
@@ -9,9 +9,16 @@ let trigger = document.getElementById("select-difficulty");
 let menu = document.getElementById("difficulty-menu");
 
 trigger.addEventListener("click", function() {
-    if (menu.style.opacity = 1) {
-        menu.style.opacity = 0.1;
+    if (menu.style.opacity == 0) {
+        menu.style.opacity = 1;
+        menu.style.zIndex = 1;
+        document.getElementById("select-difficulty").innerHTML = "Close Menu"
+    } else {
+        menu.style.opacity = 0;
+        menu.style.zIndex = 0;
+        document.getElementById("select-difficulty").innerHTML = "Select Difficulty"
     }
+    
 })
 
 var correctAnswer;
@@ -59,39 +66,32 @@ function runGame() {
     correctAnswer = gameFlags[gameNumber].country;
     document.getElementById("progress-bar").style.width = (gameNumber/29)*100 + "%"
     gameNumber++
-    console.log((gameNumber/30)*100)
-    console.log(correctAnswer)
 }
 
 
 
 // Turns difficulty boxes on home page opaique, signaling selection of difficulty.
-//let hover = document.getElementsByClassName("difficulty-box");
+let hover = document.getElementsByClassName("difficulty-box");
 
-//hover[0].addEventListener("click", event => {
-//    numberOfQuestions = 10
-//    setupGame()
-//})
-//hover[1].addEventListener("click", event => {
-//    numberOfQuestions = 20
-//    setupGame()
-//})
-//hover[2].addEventListener("click", event => {
-//    numberOfQuestions = 30
-//    setupGame()
-//})
-//hover[3].addEventListener("click", event => {
-//    numberOfQuestions = 50
-//   setupGame()
-//})
+hover[0].addEventListener("click", event => {
+    numberOfQuestions = 10
+    setupGame()
+})
+hover[1].addEventListener("click", event => {
+    numberOfQuestions = 20
+    setupGame()
+})
+hover[2].addEventListener("click", event => {
+    numberOfQuestions = 30
+    setupGame()
+})
+hover[3].addEventListener("click", event => {
+    numberOfQuestions = 50
+    setupGame()
+})
 
-
-
-
-
-
-function runTimer() {
-    let time = 10;
+function timer() {
+    let time = 8;
     let downloadTimer = setInterval(function(){
 
     if(time <= 0){
