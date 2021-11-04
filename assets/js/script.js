@@ -32,34 +32,17 @@ trigger.addEventListener("click", function() {
 // Turns difficulty boxes on, home page opaique, signaling selection of difficulty.
 let hover = document.getElementsByClassName("difficulty-box");
 
-hover[0].addEventListener("click", event => {
-    numberOfQuestions = 10
+hover[0].addEventListener("click", event => {numberOfQuestions = 10; hideMenu()})
+hover[1].addEventListener("click", event => {numberOfQuestions = 20; hideMenu()})
+hover[2].addEventListener("click", event => {numberOfQuestions = 30; hideMenu()})
+hover[3].addEventListener("click", event => {numberOfQuestions = 50; hideMenu()})
+
+function hideMenu() {
     document.getElementById("number-of-questions").textContent = "/" + numberOfQuestions;
     menu.style.zIndex = -2;
     menu.style.opacity = 0;
     setupGame()
-})
-hover[1].addEventListener("click", event => {
-    numberOfQuestions = 20;
-    document.getElementById("number-of-questions").textContent = "/" + numberOfQuestions;
-    menu.style.zIndex = -2;
-    menu.style.opacity = 0;
-    setupGame()
-})
-hover[2].addEventListener("click", event => {
-    numberOfQuestions = 30;
-    document.getElementById("number-of-questions").textContent = "/" + numberOfQuestions;
-    menu.style.zIndex = -2;
-    menu.style.opacity = 0;
-    setupGame()
-})
-hover[3].addEventListener("click", event => {
-    numberOfQuestions = 50;
-    document.getElementById("number-of-questions").textContent = "/" + numberOfQuestions;
-    menu.style.zIndex = -2;
-    menu.style.opacity = 0;
-    setupGame()
-})
+}
 
 /**
  * Creates an array of 'x' random flags based on difficulty level selected
@@ -138,7 +121,8 @@ function timer() {
 // Increase score if the user selects the correct answer
 // Highlight the correct answer if the user selects the wrong one
 let score = parseInt(document.getElementById("score").innerHTML)
-userChoice[0].addEventListener("click", event => {
+
+/*userChoice[0].addEventListener("click", function() {
     if (userChoice[0].innerText == correctAnswer) {
         document.getElementById("score").innerText = ++score;
         userChoice[0].style.background = "green";
@@ -153,5 +137,30 @@ userChoice[0].addEventListener("click", event => {
             }
         }
     }
-    setTimeout(function() {runGame();}, 1000);
-})
+    setTimeout(function() {runGame();}, 800);
+})*/
+
+let index;
+userChoice[0].addEventListener("click", event => {index = 0; validation()})
+userChoice[1].addEventListener("click", event => {index = 1; validation()})
+userChoice[2].addEventListener("click", event => {index = 2; validation()})
+userChoice[3].addEventListener("click", event => {index = 3; validation()})
+userChoice[4].addEventListener("click", event => {index = 4; validation()})
+
+function validation() {
+if (userChoice[index].innerText == correctAnswer) {
+        document.getElementById("score").innerText = ++score;
+        userChoice[index].style.background = "green";
+        userChoice[index].style.color = "black";
+    } else {
+        userChoice[index].style.background = "red";
+        userChoice[index].style.color = "white";
+        for (a=0; a<5; a++) {
+            if (userChoice[a].innerText == correctAnswer) {
+                userChoice[a].style.background = "green";
+                userChoice[a].style.color = "black"
+            }
+        }
+    }
+    setTimeout(function() {runGame();}, 800);
+}
