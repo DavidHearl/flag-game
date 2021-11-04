@@ -15,10 +15,11 @@ body{
 #difficulty-menu{
     position: absolute;
     top: 30px;
-    z-index: -1;
-    opacity: 0;
-    background-color: pink;
-    border: 1px solid black;
+    z-index: 1;
+    opacity: 1;
+    background-image: linear-gradient(0deg, #5f077a, #4f3a9c);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
 }
 /*Set header size and position, also add underline to header to separate sections*/
 header{
@@ -95,7 +96,7 @@ input{
 .difficulty-pair{
     display: flex;
     flex-direction: row;
-    margin: 5px 0 20px 0;
+    margin: 5px 0 10px 0;
 }
 .difficulty-box {
     width: 100%;
@@ -104,6 +105,7 @@ input{
     border: 1px solid white;
     border-radius: 10px;
     position: relative;
+    margin-left: 1.5%;
 }
 .difficulty-box::before {
     content: '';
@@ -122,11 +124,11 @@ input{
     color: #ffee10;
     box-shadow: 0 0 4px #ffee10;
 }
-#difficulty-medium, #difficulty-extreme{margin-left:5%}
-#difficulty-easy{background-image: linear-gradient(135deg, #95ff95, #15750d);}
-#difficulty-medium{background-image: linear-gradient(135deg, #ffbb83, #e67f0a);}
-#difficulty-hard{background-image: linear-gradient(135deg, #fd9b8a, #bd1111);}
-#difficulty-extreme{background-image: linear-gradient(135deg, #949494, #101110);}
+#difficulty-medium, #difficulty-extreme{margin-right:1.5%}
+#difficulty-easy{background-image: linear-gradient(145deg, #b4ffb4, #13680c);}
+#difficulty-medium{background-image: linear-gradient(145deg, #ffcda3, #be6600);}
+#difficulty-hard{background-image: linear-gradient(145deg, #ffafa1, #aa0b0b);}
+#difficulty-extreme{background-image: linear-gradient(145deg, #868686, #000000);}
 /*Set max width and height of image so they don't leak out of a div*/
 img{
     max-width: 100%;

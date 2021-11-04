@@ -1,30 +1,30 @@
 // Run game on page load
 document.addEventListener("DOMContentLoaded", function(){
     setupGame()
-    timer()
     runGame()
 })
 
 let trigger = document.getElementById("select-difficulty");
 let menu = document.getElementById("difficulty-menu");
+let game = document.getElementById("game");
 
+var correctAnswer;
+var gameFlags = []
+var gameNumber = 0
+var numberOfQuestions;
+
+// Opens and closes difficulty menu when clicked
 trigger.addEventListener("click", function() {
     if (menu.style.opacity == 0) {
         menu.style.opacity = 1;
         menu.style.zIndex = 1;
-        document.getElementById("select-difficulty").innerHTML = "Close Menu"
+        trigger.innerHTML = "Close Menu"
     } else {
         menu.style.opacity = 0;
         menu.style.zIndex = 0;
-        document.getElementById("select-difficulty").innerHTML = "Select Difficulty"
+        trigger.innerHTML = "Select Difficulty"
     }
-    
 })
-
-var correctAnswer;
-var gameFlags = []
-let gameNumber = 0
-//var numberOfQuestions;
 
 /**
  * Creates an array of 'x' random flags based on difficulty level selected
@@ -44,6 +44,8 @@ function setupGame() {
     console.log(gameFlags)
     runGame()
 }
+
+
 
 function runGame() {
     for (i=0; i<5; i++) {
@@ -68,25 +70,35 @@ function runGame() {
     gameNumber++
 }
 
-
-
 // Turns difficulty boxes on home page opaique, signaling selection of difficulty.
 let hover = document.getElementsByClassName("difficulty-box");
 
 hover[0].addEventListener("click", event => {
     numberOfQuestions = 10
+    document.getElementById("number-of-questions").textContent = "/" + numberOfQuestions;
+    menu.style.zIndex = -2;
+    menu.style.opacity = 0;
     setupGame()
 })
 hover[1].addEventListener("click", event => {
-    numberOfQuestions = 20
+    numberOfQuestions = 20;
+    document.getElementById("number-of-questions").textContent = "/" + numberOfQuestions;
+    menu.style.zIndex = -2;
+    menu.style.opacity = 0;
     setupGame()
 })
 hover[2].addEventListener("click", event => {
-    numberOfQuestions = 30
+    numberOfQuestions = 30;
+    document.getElementById("number-of-questions").textContent = "/" + numberOfQuestions;
+    menu.style.zIndex = -2;
+    menu.style.opacity = 0;
     setupGame()
 })
 hover[3].addEventListener("click", event => {
-    numberOfQuestions = 50
+    numberOfQuestions = 50;
+    document.getElementById("number-of-questions").textContent = "/" + numberOfQuestions;
+    menu.style.zIndex = -2;
+    menu.style.opacity = 0;
     setupGame()
 })
 
