@@ -1,16 +1,17 @@
 // Run game on page load
 document.addEventListener("DOMContentLoaded", function(){
-    setupGame()
-    runGame()
+    //setupGame()
+    //runGame()
 })
 
 let trigger = document.getElementById("select-difficulty");
 let menu = document.getElementById("difficulty-menu");
 let game = document.getElementById("game");
+let userChoice = document.getElementsByClassName("user-choice");
 
 var correctAnswer;
-var gameFlags = []
-var gameNumber = 0
+var gameFlags = [];
+var gameNumber = 0;
 var numberOfQuestions;
 
 // Opens and closes difficulty menu when clicked
@@ -18,59 +19,15 @@ trigger.addEventListener("click", function() {
     if (menu.style.opacity == 0) {
         menu.style.opacity = 1;
         menu.style.zIndex = 1;
-        trigger.innerHTML = "Close Menu"
+        trigger.innerHTML = "Close Menu";
     } else {
         menu.style.opacity = 0;
         menu.style.zIndex = 0;
-        trigger.innerHTML = "Select Difficulty"
+        trigger.innerHTML = "Select Difficulty";
     }
 })
 
-/**
- * Creates an array of 'x' random flags based on difficulty level selected
- */
-function setupGame() {
-    // Shuffles flag array
-    var currentIndex = flags.length;
-    while (currentIndex != 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [flags[currentIndex],flags[randomIndex]] = [flags[randomIndex], flags[currentIndex]];
-    }
-    // Pushes random flags to the array
-    for (i = 0; i<30; i++) {
-        gameFlags.push({country: flags[i].country, image: flags[i].image})
-    }
-    console.log(gameFlags)
-    runGame()
-}
-
-
-
-function runGame() {
-    for (i=0; i<5; i++) {
-    document.getElementsByClassName("user-choice")[i].style.background = "white";
-    }
-    
-    var imageLocation = "assets/images/flags/" + gameFlags[gameNumber].image + ".png"
-    document.getElementById("flag-image").src = imageLocation
-
-    // Assigns random values to user-choice from the flag array
-    for (i=0; i<5; i++) {
-        document.getElementsByClassName("user-choice")[i].innerText = flags[Math.floor(Math.random() * flags.length)].country;
-    }
-
-    // Assigns the correct answer to a random use choice box
-    let randomSelection = Math.floor(Math.random() * 5)
-    document.getElementsByClassName("user-choice")[randomSelection].innerText = gameFlags[gameNumber].country
-
-    // Sets the correct answer
-    correctAnswer = gameFlags[gameNumber].country;
-    document.getElementById("progress-bar").style.width = (gameNumber/29)*100 + "%"
-    gameNumber++
-}
-
-// Turns difficulty boxes on home page opaique, signaling selection of difficulty.
+// Turns difficulty boxes on, home page opaique, signaling selection of difficulty.
 let hover = document.getElementsByClassName("difficulty-box");
 
 hover[0].addEventListener("click", event => {
@@ -102,6 +59,66 @@ hover[3].addEventListener("click", event => {
     setupGame()
 })
 
+/**
+ * Creates an array of 'x' random flags based on difficulty level selected
+ */
+function setupGame() {
+    // Gets number of elements in the flag array
+    var currentIndex = flags.length;
+    // Generates random number, steps down current index, shuffles array
+    while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [flags[currentIndex],flags[randomIndex]] = [flags[randomIndex], flags[currentIndex]];
+    }
+    // Creates an array of random flags, called 'gameFlags'
+    for (i = 0; i<numberOfQuestions; i++) {
+        gameFlags.push({country: flags[i].country, image: flags[i].image})
+    }
+    console.log(gameFlags)
+    runGame()
+}
+
+/**
+ * 
+ */
+function runGame() {
+    // Alerts the user that a the game has finished
+    if (gameNumber >= numberOfQuestions) {
+        alert(`You completed the game and scored: ${score}`)
+    }
+
+    // Turns all answer boxes back to white
+    for (i=0; i<5; i++) {userChoice[i].style.background = "white";}
+    
+    // Grabs the correct flag from the assets folder
+    var imageLocation = "assets/images/flags/" + gameFlags[gameNumber].image + ".png"
+    document.getElementById("flag-image").src = imageLocation
+
+    // Assigns random values to user-choice from the flag array
+    for (i=0; i<5; i++) {
+        userChoice[i].innerText = flags[Math.floor(Math.random() * flags.length)].country;
+    }
+
+    // Assigns the correct answer to a random use choice box
+    let randomSelection = Math.floor(Math.random() * 5)
+    userChoice[randomSelection].innerText = gameFlags[gameNumber].country
+
+    // Sets the correct answer
+    correctAnswer = gameFlags[gameNumber].country;
+    gameNumber++
+    document.getElementById("progress-bar").style.width = (gameNumber/numberOfQuestions)*100 + "%"
+}
+
+// Increase score if the user clicks the first user choice button
+let score = parseInt(document.getElementById("score").innerHTML)
+userChoice[0].addEventListener("click", event => {
+    document.getElementById("score").innerText = ++score;
+})
+
+/**
+ * 
+ */
 function timer() {
     let time = 8;
     let downloadTimer = setInterval(function(){
@@ -116,12 +133,15 @@ function timer() {
     }, 10);
 }
 
+/**
+ * 
+ */
 function changeColor() {
     for (i=0; i<5; i++) {
-        if (document.getElementsByClassName("user-choice")[i].innerText === correctAnswer) {
-            document.getElementsByClassName("user-choice")[i].style.background = "Green";
+        if (userChoice[i].innerText === correctAnswer) {
+            userChoice[i].style.background = "Green";
         } else {
-            document.getElementsByClassName("user-choice")[i].style.background = "Red";
+            userChoice[i].style.background = "Red";
         }
     }
     setTimeout(function() {
