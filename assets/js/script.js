@@ -4,11 +4,13 @@ document.addEventListener("DOMContentLoaded", function(){
     //runGame()
 })
 
+// Assign Variables to HTML elements
 let trigger = document.getElementById("select-difficulty");
 let menu = document.getElementById("difficulty-menu");
 let game = document.getElementById("game");
 let userChoice = document.getElementsByClassName("user-choice");
 
+// Assign global varables
 var correctAnswer;
 var gameFlags = [];
 var gameNumber = 0;
@@ -77,19 +79,24 @@ function setupGame() {
     }
     console.log(gameFlags)
     runGame()
+    timer()
 }
 
 /**
- * 
+ * Ends game if score limit has been reached and runs game.
  */
 function runGame() {
     // Alerts the user that a the game has finished
     if (gameNumber >= numberOfQuestions) {
-        alert(`You completed the game and scored: ${score}`)
+        alert(`You completed the game and scored: ${(score/numberOfQuestions)*100}%`)
+        return
     }
 
     // Turns all answer boxes back to white
-    for (i=0; i<5; i++) {userChoice[i].style.background = "white";}
+    for (i=0; i<5; i++) {
+        userChoice[i].style.background = "white";
+        userChoice[i].style.color = "rgb(62, 125, 197)"
+    }
     
     // Grabs the correct flag from the assets folder
     var imageLocation = "assets/images/flags/" + gameFlags[gameNumber].image + ".png"
@@ -108,16 +115,11 @@ function runGame() {
     correctAnswer = gameFlags[gameNumber].country;
     gameNumber++
     document.getElementById("progress-bar").style.width = (gameNumber/numberOfQuestions)*100 + "%"
+    timer()
 }
 
-// Increase score if the user clicks the first user choice button
-let score = parseInt(document.getElementById("score").innerHTML)
-userChoice[0].addEventListener("click", event => {
-    document.getElementById("score").innerText = ++score;
-})
-
 /**
- * 
+ * Runs timer
  */
 function timer() {
     let time = 8;
@@ -130,21 +132,26 @@ function timer() {
         document.getElementById("timer").innerHTML = time.toFixed(2);
     }
     time -= 0.01;
-    }, 10);
+    }, 5);
 }
 
-/**
- * 
- */
-function changeColor() {
-    for (i=0; i<5; i++) {
-        if (userChoice[i].innerText === correctAnswer) {
-            userChoice[i].style.background = "Green";
-        } else {
-            userChoice[i].style.background = "Red";
+// Increase score if the user selects the correct answer
+// Highlight the correct answer if the user selects the wrong one
+let score = parseInt(document.getElementById("score").innerHTML)
+userChoice[0].addEventListener("click", event => {
+    if (userChoice[0].innerText == correctAnswer) {
+        document.getElementById("score").innerText = ++score;
+        userChoice[0].style.background = "green";
+        userChoice[0].style.color = "black"
+    } else {
+        userChoice[0].style.background = "red";
+        userChoice[0].style.color = "white";
+        for (a=0; a<5; a++) {
+            if (userChoice[a].innerText == correctAnswer) {
+                userChoice[a].style.background = "green";
+                userChoice[a].style.color = "black"
+            }
         }
     }
-    setTimeout(function() {
-        runGame();
-    }, 750);
-}
+    setTimeout(function() {runGame();}, 1000);
+})

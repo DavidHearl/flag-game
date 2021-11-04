@@ -27,42 +27,46 @@
                 
                 <div id="progress-bar"></div>
                 <div id="flag">
-                    <img id="flag-image" src="">
+                    <img id="flag-image" src="" alt="Countries Flags">
                 </div>
 
-                <button class="user-choice" onclick="changeColor()"></button>
-                <button class="user-choice" onclick="changeColor()"></button>
-                <button class="user-choice" onclick="changeColor()"></button>
-                <button class="user-choice" onclick="changeColor()"></button>
-                <button class="user-choice" onclick="changeColor()"></button>
+                <!--Add onclick="changeColor() back if it fails-->
+                <button class="user-choice"></button>
+                <button class="user-choice"></button>
+                <button class="user-choice"></button>
+                <button class="user-choice"></button>
+                <button class="user-choice"></button>
             </section>
 
             <section id="difficulty-menu">
                 <div id="page-heading">
-                    <label>What is your name?</label>
-                    <input>
+                    <form>
+                        <label>What is your name?</label>
+                        <input>    
+                    </form>
+                    
                     <h2>Choose Your Game</h2>
                 </div>
 
                 <div class="difficulty-pair">
                     <div class="difficulty-box" id="difficulty-easy">
                         <h3>Easy - 10</h3>
-                        <img src="/assets/images/flag-difficulties/Easy.png">
+                        <img src="/assets/images/flag-difficulties/Easy.png" alt="Easy flags">
                     </div>
                     <div class="difficulty-box" id="difficulty-medium">
                         <h3>Medium - 20</h3>
-                        <img src="/assets/images/flag-difficulties/Medium.png">
+                        <img src="/assets/images/flag-difficulties/Medium.png" alt="Medium difficulty flags">
                     </div>
                 </div>
 
                 <div class="difficulty-pair">
                     <div class="difficulty-box" id="difficulty-hard">
                         <h3>Hard - 30</h3>
-                        <img src="/assets/images/flag-difficulties/Hard.png">
+                        <img src="/assets/images/flag-difficulties/Hard.png" alt="Hard flags">
                     </div>
                     <div class="difficulty-box" id="difficulty-extreme">
                         <h3>Extreme - 50</h3>   
-                        <img src="/assets/images/flag-difficulties/Extreme.png">
+                        <img src="/assets/images/flag-difficulties/Extreme.png" alt="Extremely difficult flags">
                     </div>
                 </div>
             </section>
