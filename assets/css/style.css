@@ -1,20 +1,22 @@
 /*Set font, remove default padding and margins, set global color to white*/
-*{
+* {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 0;
+    /*margin: 0;*/
     padding: 0;
     color: white;
 }
+
 /*Set Background gradient and color*/
-body{
+body {
     background-color: #2a2a72;
     background: -webkit-gradient(linear, left top, left bottom, from(#2a2a72), to(#009ffd)) fixed;
     background-repeat: no-repeat;
     z-index: 0;
 }
-#difficulty-menu{
+
+#difficulty-menu {
     position: absolute;
-    top: 35px;
+    top: 40px;
     z-index: 1;
     opacity: 1;
     background-image: linear-gradient(0deg, #5f077a, #4f3a9c);
@@ -22,59 +24,76 @@ body{
     border-radius: 15px;
     box-shadow: 0 0 20px #000000;
 }
+
 /*Set header size and position, also add underline to header to separate sections*/
-header{
+header {
     text-align: center;
     width: 100%;
     height: 40px;
     border-bottom: 2px solid white;
 }
+
 /*Removes link styling*/
-a:link, a:visited{text-decoration: none;}
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
 /*Set font styles and spacing*/
 h1 {
     font-weight: 800;
     margin-top: 3px;
     font-size: 1.8rem;
 }
+
 /*Align content to center above difficulty divs*/
-#page-heading{
+#page-heading {
     text-align: center;
     display: flex;
     flex-direction: column;
 }
+
 /*Set responsive and max width, center main*/
-main{
+main {
     width: 50%;
     margin: 0 auto;
     max-width: 1200px;
     position: relative;
     top: 5px;
 }
+
 /*Set font size and spacing*/
 h2 {
     font-size: 1.6rem;
     margin: 10px 0 5px 0;
 }
+
 h3 {
     font-size: 1.4rem;
     margin: 2px 0 10px 5px;
     color: black;
 }
+
 /*Label and input styling*/
-label{
+form {
+    margin: 10px 0 0 0;
+}
+
+label {
     font-size: 1.5rem;
     margin: 5px 0 5px 0;
 }
-input{
+
+input {
     font-size: 1.6rem;
     border-radius: 5px;
     border: none;
     color: black;
     width: 50%;
-    margin: 0 auto;
+    margin: 0 0 0 5px;
     text-align: center;
 }
+
 /*Set timer size and position*/
 #timer {
     font-size: 1.5rem;
@@ -82,9 +101,10 @@ input{
     text-align: center;
     margin-top: 15px;
 }
+
 /*Set the border, spacing and color for the timer*/
-#timer-border{
-    float:right;
+#timer-border {
+    float: right;
     height: 60px;
     width: 60px;
     border: 2px solid rgb(39, 231, 13);
@@ -94,11 +114,12 @@ input{
 }
 
 /*Settings for all home page difficulty boxes*/
-.difficulty-pair{
+.difficulty-pair {
     display: flex;
     flex-direction: row;
     margin: 5px 0 10px 0;
 }
+
 .difficulty-box {
     width: 100%;
     height: 0;
@@ -108,6 +129,7 @@ input{
     position: relative;
     margin-left: 1.5%;
 }
+
 .difficulty-box::before {
     content: '';
     position: absolute;
@@ -117,28 +139,42 @@ input{
     transition: .1s;
     z-index: -1;
 }
+
 .difficulty-box:hover::before {
     /*transform: scale(1.025);*/
     box-shadow: 0 0 20px #ffee10;
 }
+
 .difficulty-box:hover {
     color: #ffee10;
     box-shadow: 0 0 4px #ffee10;
 }
-#difficulty-medium, #difficulty-extreme{margin-right:1.5%}
-#difficulty-easy{background-image: linear-gradient(145deg, #b4ffb4, #13680c);}
-#difficulty-medium{background-image: linear-gradient(145deg, #ffcda3, #be6600);}
-#difficulty-hard{background-image: linear-gradient(145deg, #ffafa1, #aa0b0b);}
-#difficulty-extreme{background-image: linear-gradient(145deg, #868686, #000000);}
-/*Set max width and height of image so they don't leak out of a div*/
-img{
-    max-width: 100%;
-    height: auto;
+
+#difficulty-medium,
+#difficulty-extreme {
+    margin-right: 1.5%
+}
+
+#difficulty-easy {
+    background-image: linear-gradient(145deg, #b4ffb4, #13680c);
+}
+
+#difficulty-medium {
+    background-image: linear-gradient(145deg, #ffcda3, #be6600);
+}
+
+#difficulty-hard {
+    background-image: linear-gradient(145deg, #ffafa1, #aa0b0b);
+}
+
+#difficulty-extreme {
+    background-image: linear-gradient(145deg, #868686, #000000);
 }
 
 /*Set play button styles*/
-#select-difficulty{ /*#choose-difficulty was removes from here*/
-    height: 25px;
+#select-difficulty {
+    /*#choose-difficulty was removes from here*/
+    height: 30px;
     width: 100%;
     font-weight: 800;
     font-size: 1.4rem;
@@ -148,86 +184,111 @@ img{
     cursor: pointer;
     color: rgb(62, 125, 197);
 }
+
 /*Set answer buttons on flag game page*/
-.user-choice {  /*Background color in js file*/
+.user-choice {
+    /*Background color in js file*/
     margin: 8px 0;
     height: 50px;
     width: 100%;
     font-weight: 800;
     font-size: 2rem;
     border-radius: 10px;
-    cursor: pointer; 
+    cursor: pointer;
     color: rgb(62, 125, 197);
     border: none;
 }
+
 /*Progress bar styling, added width so it finishes at the correct spot*/
-#progress-bar{
+#progress-bar {
     background-color: rgb(255, 255, 255);
     width: 1%;
     height: 15px;
     border-radius: 7.5px;
     margin-bottom: 5px;
 }
+
 #flag {
-    max-height: 500px;
     text-align: center;
+    margin: 0 auto;
 }
-.scores{
+
+/*Set max width and height of image so they don't leak out of a div*/
+img {
+    max-width: 100%;
+    max-height: 400px;
+    margin: 0 auto;
+}
+
+.scores {
     text-align: center;
     position: relative;
     font-size: 1.8rem;
-    left: 30px;
+    margin-left: 28px;
+    width: 100%;
 }
+
 @media screen and (max-width: 900px) {
-    main{
+    main {
         width: 90%;
         margin-left: 5%;
     }
-    h1{margin-left: 5%;}
-    h2 {font-size: 1rem;}
-    .user-choice{
+
+    h1 {
+        margin-left: 5%;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .user-choice {
         height: 30px;
         width: 100%;
         border-radius: 10px;
         text-align: center;
-    
+
         font-size: 1rem;
         margin-top: 2px;
     }
-    .scores{
+
+    .scores {
         font-size: 1.4rem;
         left: 20px;
     }
-    #timer{
+
+    #timer {
         font-size: 1rem;
         margin-top: 10px;
     }
-    #timer-border{
+
+    #timer-border {
         height: 40px;
         width: 40px;
         bottom: 25px;
         border-radius: 25px;
     }
-    #flag{
+
+    #flag {
         margin-bottom: 5px;
     }
-    label{
+
+    label {
         font-size: 1.2rem;
         margin: 5px 0 5px 0;
     }
-    input{
+
+    input {
         font-size: 1.3rem;
         width: 70%;
     }
-    h3{
+
+    h3 {
         font-size: 1.1rem;
         margin: 2px 0 8px 4px;
     }
-    img{
-        position: relative;
-        bottom: 6px;
-    }
-    #progress-bar{
+
+    #progress-bar {
         margin-bottom: 15px;
     }
 }

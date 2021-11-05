@@ -1,5 +1,5 @@
 // Run game on page load
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
     //setupGame()
     //runGame()
 })
@@ -17,7 +17,7 @@ var gameNumber = 0;
 var numberOfQuestions;
 
 // Opens and closes difficulty menu when clicked
-trigger.addEventListener("click", function() {
+trigger.addEventListener("click", function () {
     if (menu.style.opacity == 0) {
         menu.style.opacity = 1;
         menu.style.zIndex = 1;
@@ -32,10 +32,22 @@ trigger.addEventListener("click", function() {
 // Turns difficulty boxes on, home page opaique, signaling selection of difficulty.
 let hover = document.getElementsByClassName("difficulty-box");
 
-hover[0].addEventListener("click", event => {numberOfQuestions = 10; hideMenu()})
-hover[1].addEventListener("click", event => {numberOfQuestions = 20; hideMenu()})
-hover[2].addEventListener("click", event => {numberOfQuestions = 30; hideMenu()})
-hover[3].addEventListener("click", event => {numberOfQuestions = 50; hideMenu()})
+hover[0].addEventListener("click", event => {
+    numberOfQuestions = 10;
+    hideMenu()
+})
+hover[1].addEventListener("click", event => {
+    numberOfQuestions = 20;
+    hideMenu()
+})
+hover[2].addEventListener("click", event => {
+    numberOfQuestions = 30;
+    hideMenu()
+})
+hover[3].addEventListener("click", event => {
+    numberOfQuestions = 50;
+    hideMenu()
+})
 
 function hideMenu() {
     document.getElementById("number-of-questions").textContent = "/" + numberOfQuestions;
@@ -54,11 +66,14 @@ function setupGame() {
     while (currentIndex != 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
-        [flags[currentIndex],flags[randomIndex]] = [flags[randomIndex], flags[currentIndex]];
+        [flags[currentIndex], flags[randomIndex]] = [flags[randomIndex], flags[currentIndex]];
     }
     // Creates an array of random flags, called 'gameFlags'
-    for (i = 0; i<numberOfQuestions; i++) {
-        gameFlags.push({country: flags[i].country, image: flags[i].image})
+    for (i = 0; i < numberOfQuestions; i++) {
+        gameFlags.push({
+            country: flags[i].country,
+            image: flags[i].image
+        })
     }
     console.log(gameFlags)
     runGame()
@@ -76,17 +91,17 @@ function runGame() {
     }
 
     // Turns all answer boxes back to white
-    for (i=0; i<5; i++) {
+    for (i = 0; i < 5; i++) {
         userChoice[i].style.background = "white";
         userChoice[i].style.color = "rgb(62, 125, 197)"
     }
-    
+
     // Grabs the correct flag from the assets folder
     var imageLocation = "assets/images/flags/" + gameFlags[gameNumber].image + ".png"
     document.getElementById("flag-image").src = imageLocation
 
     // Assigns random values to user-choice from the flag array
-    for (i=0; i<5; i++) {
+    for (i = 0; i < 5; i++) {
         userChoice[i].innerText = flags[Math.floor(Math.random() * flags.length)].country;
     }
 
@@ -97,7 +112,7 @@ function runGame() {
     // Sets the correct answer
     correctAnswer = gameFlags[gameNumber].country;
     gameNumber++
-    document.getElementById("progress-bar").style.width = (gameNumber/numberOfQuestions)*100 + "%"
+    document.getElementById("progress-bar").style.width = (gameNumber / numberOfQuestions) * 100 + "%"
     timer()
 }
 
@@ -106,15 +121,15 @@ function runGame() {
  */
 function timer() {
     let time = 8;
-    let downloadTimer = setInterval(function(){
+    let downloadTimer = setInterval(function () {
 
-    if(time <= 0){
-        clearInterval(downloadTimer);
-        document.getElementById("timer").innerHTML = "0.00";
-    } else {
-        document.getElementById("timer").innerHTML = time.toFixed(2);
-    }
-    time -= 0.01;
+        if (time <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById("timer").innerHTML = "0.00";
+        } else {
+            document.getElementById("timer").innerHTML = time.toFixed(2);
+        }
+        time -= 0.01;
     }, 5);
 }
 
@@ -141,26 +156,43 @@ let score = parseInt(document.getElementById("score").innerHTML)
 })*/
 
 let index;
-userChoice[0].addEventListener("click", event => {index = 0; validation()})
-userChoice[1].addEventListener("click", event => {index = 1; validation()})
-userChoice[2].addEventListener("click", event => {index = 2; validation()})
-userChoice[3].addEventListener("click", event => {index = 3; validation()})
-userChoice[4].addEventListener("click", event => {index = 4; validation()})
+userChoice[0].addEventListener("click", event => {
+    index = 0;
+    validation()
+})
+userChoice[1].addEventListener("click", event => {
+    index = 1;
+    validation()
+})
+userChoice[2].addEventListener("click", event => {
+    index = 2;
+    validation()
+})
+userChoice[3].addEventListener("click", event => {
+    index = 3;
+    validation()
+})
+userChoice[4].addEventListener("click", event => {
+    index = 4;
+    validation()
+})
 
 function validation() {
-if (userChoice[index].innerText == correctAnswer) {
+    if (userChoice[index].innerText == correctAnswer) {
         document.getElementById("score").innerText = ++score;
         userChoice[index].style.background = "green";
         userChoice[index].style.color = "black";
     } else {
         userChoice[index].style.background = "red";
         userChoice[index].style.color = "white";
-        for (a=0; a<5; a++) {
+        for (a = 0; a < 5; a++) {
             if (userChoice[a].innerText == correctAnswer) {
                 userChoice[a].style.background = "green";
                 userChoice[a].style.color = "black"
             }
         }
     }
-    setTimeout(function() {runGame();}, 800);
+    setTimeout(function () {
+        runGame();
+    }, 800);
 }
