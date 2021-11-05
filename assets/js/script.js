@@ -92,6 +92,8 @@ function runGame() {
         location.reload()
     }
 
+    document.getElementById("timer-border").style.borderColor = "green"
+
     // Turns all answer boxes back to white
     for (i = 0; i < 5; i++) {
         userChoice[i].style.background = "white";
@@ -140,6 +142,15 @@ function timer() {
             document.getElementById("timer").innerHTML = "0.00";
         } else {
             document.getElementById("timer").innerHTML = time.toFixed(2);
+            if (time <= 4) {
+                document.getElementById("timer-border").style.borderColor = "orange"
+            } 
+            if (time <= 2) {
+                document.getElementById("timer-border").style.borderColor = "red"
+            } 
+            if (time <= 0.01) {
+                runGame()
+            }
         }
         time -= 0.01;
     }, 5);
@@ -188,5 +199,5 @@ function validation() {
     }
     setTimeout(function () {
         runGame();
-    }, 100); // Change back to 800 after testing
+    }, 900);
 }

@@ -111,7 +111,7 @@ input {
     float: right;
     height: 60px;
     width: 60px;
-    border: 2px solid rgb(39, 231, 13);
+    border: 3px solid rgb(39, 231, 13);
     position: relative;
     bottom: 35px;
     border-radius: 30px;
