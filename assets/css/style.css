@@ -254,7 +254,7 @@ img {
 
     .scores {
         font-size: 1.4rem;
-        left: 20px;
+        margin-left: 10px;
     }
 
     #timer {

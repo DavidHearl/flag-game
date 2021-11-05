@@ -1,9 +1,3 @@
-// Run game on page load
-document.addEventListener("DOMContentLoaded", function () {
-    //setupGame()
-    //runGame()
-})
-
 // Assign Variables to HTML elements
 let trigger = document.getElementById("select-difficulty");
 let menu = document.getElementById("difficulty-menu");
@@ -77,7 +71,6 @@ function setupGame() {
     }
     console.log(gameFlags)
     runGame()
-    timer()
 }
 
 /**
@@ -87,7 +80,7 @@ function runGame() {
     // Alerts the user that a the game has finished
     if (gameNumber >= numberOfQuestions) {
         alert(`You completed the game and scored: ${(score/numberOfQuestions)*100}%`)
-        return
+        location.reload()
     }
 
     // Turns all answer boxes back to white
@@ -120,7 +113,17 @@ function runGame() {
  * Runs timer
  */
 function timer() {
-    let time = 8;
+    let time;
+    if (numberOfQuestions == 10) {
+        time = 15;
+    } else if (numberOfQuestions == 20) {
+        time = 12;
+    } else if (numberOfQuestions == 30) {
+        time = 10;
+    } else {
+        time = 8;
+    }
+
     let downloadTimer = setInterval(function () {
 
         if (time <= 0) {
@@ -136,24 +139,6 @@ function timer() {
 // Increase score if the user selects the correct answer
 // Highlight the correct answer if the user selects the wrong one
 let score = parseInt(document.getElementById("score").innerHTML)
-
-/*userChoice[0].addEventListener("click", function() {
-    if (userChoice[0].innerText == correctAnswer) {
-        document.getElementById("score").innerText = ++score;
-        userChoice[0].style.background = "green";
-        userChoice[0].style.color = "black"
-    } else {
-        userChoice[0].style.background = "red";
-        userChoice[0].style.color = "white";
-        for (a=0; a<5; a++) {
-            if (userChoice[a].innerText == correctAnswer) {
-                userChoice[a].style.background = "green";
-                userChoice[a].style.color = "black"
-            }
-        }
-    }
-    setTimeout(function() {runGame();}, 800);
-})*/
 
 let index;
 userChoice[0].addEventListener("click", event => {
@@ -194,5 +179,5 @@ function validation() {
     }
     setTimeout(function () {
         runGame();
-    }, 800);
+    }, 100); // Change back to 800 after testing
 }
