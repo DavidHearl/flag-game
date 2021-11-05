@@ -25,21 +25,30 @@ trigger.addEventListener("click", function () {
 
 // Turns difficulty boxes on, home page opaique, signaling selection of difficulty.
 let hover = document.getElementsByClassName("difficulty-box");
+let title = document.getElementById("difficulty-level")
 
 hover[0].addEventListener("click", event => {
     numberOfQuestions = 10;
+    title.innerText = "Easy"
+    title.style.color = "green"
     hideMenu()
 })
 hover[1].addEventListener("click", event => {
     numberOfQuestions = 20;
+    title.innerText = "Medium"
+    title.style.color = "orange"
     hideMenu()
 })
 hover[2].addEventListener("click", event => {
     numberOfQuestions = 30;
+    title.innerText = "Hard"
+    title.style.color = "red"
     hideMenu()
 })
 hover[3].addEventListener("click", event => {
     numberOfQuestions = 50;
+    title.innerText = "Extreme"
+    title.style.color = "black"
     hideMenu()
 })
 
