@@ -1,5 +1,5 @@
 // Assign Variables to HTML elements
-let trigger = document.getElementById("select-difficulty");
+let trigger = document.getElementById("restart");
 let menu = document.getElementById("difficulty-menu");
 let game = document.getElementById("game");
 let userChoice = document.getElementsByClassName("user-choice");
@@ -13,16 +13,18 @@ var time;
 
 // Opens and closes difficulty menu when clicked
 trigger.addEventListener("click", function () {
-    if (menu.style.opacity == 0) {
-        menu.style.opacity = 1;
-        menu.style.zIndex = 1;
-        trigger.innerHTML = "Close Menu";
-    } else {
-        menu.style.opacity = 0;
-        menu.style.zIndex = 0;
-        trigger.innerHTML = "Select Difficulty";
-    }
+    location.reload()
 })
+//     if (menu.style.opacity == 0) {
+//         menu.style.opacity = 1;
+//         menu.style.zIndex = 1;
+//         trigger.innerHTML = "Close Menu";
+//     } else {
+//         menu.style.opacity = 0;
+//         menu.style.zIndex = 0;
+//         trigger.innerHTML = "Select Difficulty";
+//     }
+// })
 
 // Turns difficulty boxes on, home page opaique, signaling selection of difficulty.
 let hover = document.getElementsByClassName("difficulty-box");
@@ -98,7 +100,7 @@ function runGame() {
     // Turns all answer boxes back to white
     for (i = 0; i < 5; i++) {
         userChoice[i].style.background = "white";
-        userChoice[i].style.color = "rgb(62, 125, 197)"
+        userChoice[i].style.color = "rgb(18, 89, 170)";
     }
 
     // Grabs the correct flag from the assets folder
@@ -125,7 +127,7 @@ function runGame() {
  * Runs timer
  */
 function timer() {
-    
+
     if (numberOfQuestions == 10) {
         time = 15;
     } else if (numberOfQuestions == 20) {
@@ -145,10 +147,10 @@ function timer() {
             time -= 0.01;
             if (time <= 5.5) {
                 document.getElementById("timer-border").style.borderColor = "orange"
-            } 
+            }
             if (time <= 3) {
                 document.getElementById("timer-border").style.borderColor = "red"
-            } 
+            }
             if (time <= 0.01) {
                 clearInterval(downloadTimer)
                 runGame()

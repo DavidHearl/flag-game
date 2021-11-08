@@ -69,7 +69,7 @@ h2 {
 }
 
 #difficulty-level {
-    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, 
+    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000,
 }
 
 h3 {
@@ -145,7 +145,6 @@ input {
 }
 
 .difficulty-box:hover::before {
-    /*transform: scale(1.025);*/
     box-shadow: 0 0 20px #ffee10;
 }
 
@@ -176,7 +175,7 @@ input {
 }
 
 /*Set play button styles*/
-#select-difficulty {
+#restart {
     /*#choose-difficulty was removes from here*/
     height: 30px;
     width: 100%;
@@ -186,7 +185,7 @@ input {
     border: none;
     background-color: white;
     cursor: pointer;
-    color: rgb(62, 125, 197);
+    color: rgb(18, 89, 170);
 }
 
 /*Set answer buttons on flag game page*/
@@ -199,7 +198,7 @@ input {
     font-size: 1.6rem;
     border-radius: 10px;
     cursor: pointer;
-    color: rgb(62, 125, 197);
+    color: rgb(18, 89, 170);
     border: none;
 }
 

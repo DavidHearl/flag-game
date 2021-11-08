@@ -1,76 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>Game Central</title>
-    </head>
 
-    <body>
-        <header>
-            <nav>
-                <h1>GameCentral</h1>
-            </nav>
-        </header>
-    
-        <main>
-            <section id="game">
-                <button id="select-difficulty">Select Difficulty</button> 
-                <h2>Flags of the World - <span id="difficulty-level"></span></h2>
-                <div id="timer-border">
-                    <p id="timer">9.99</p>                     
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Game Central</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>GameCentral</h1>
+        </nav>
+    </header>
+
+    <main>
+        <section id="game">
+            <button id="restart">Restart</button>
+            <h2>Flags of the World - <span id="difficulty-level"></span></h2>
+            <div id="timer-border">
+                <p id="timer">9.99</p>
+            </div>
+
+            <p class="scores">Score: <span id="score">0</span><span id="number-of-questions">/30</span></p>
+
+            <div id="progress-bar"></div>
+            <div id="flag">
+                <img id="flag-image" src="" alt="Countries Flags">
+            </div>
+
+            <button class="user-choice"></button>
+            <button class="user-choice"></button>
+            <button class="user-choice"></button>
+            <button class="user-choice"></button>
+            <button class="user-choice"></button>
+        </section>
+
+        <section id="difficulty-menu">
+            <div id="page-heading">
+                <form>
+                    <label>What is your name?</label>
+                    <input>
+                </form>
+                <h2>Choose Your Game</h2>
+            </div>
+
+            <div class="difficulty-pair">
+                <div class="difficulty-box" id="difficulty-easy">
+                    <h3>Easy - 10</h3>
+                    <img src="/assets/images/flag-difficulties/Easy.png" alt="Easy flags">
                 </div>
-                
-                <p class="scores">Score: <span id="score">0</span><span id="number-of-questions">/30</span></p>
-                
-                <div id="progress-bar"></div>
-                <div id="flag">
-                    <img id="flag-image" src="" alt="Countries Flags">
+                <div class="difficulty-box" id="difficulty-medium">
+                    <h3>Medium - 20</h3>
+                    <img src="/assets/images/flag-difficulties/Medium.png" alt="Medium difficulty flags">
                 </div>
+            </div>
 
-                <button class="user-choice"></button>
-                <button class="user-choice"></button>
-                <button class="user-choice"></button>
-                <button class="user-choice"></button>
-                <button class="user-choice"></button>
-            </section>
-
-            <section id="difficulty-menu">
-                <div id="page-heading">
-                    <form>
-                        <label>What is your name?</label>
-                        <input>    
-                    </form>
-                    <h2>Choose Your Game</h2>
+            <div class="difficulty-pair">
+                <div class="difficulty-box" id="difficulty-hard">
+                    <h3>Hard - 30</h3>
+                    <img src="/assets/images/flag-difficulties/Hard.png" alt="Hard flags">
                 </div>
-
-                <div class="difficulty-pair">
-                    <div class="difficulty-box" id="difficulty-easy">
-                        <h3>Easy - 10</h3>
-                        <img src="/assets/images/flag-difficulties/Easy.png" alt="Easy flags">
-                    </div>
-                    <div class="difficulty-box" id="difficulty-medium">
-                        <h3>Medium - 20</h3>
-                        <img src="/assets/images/flag-difficulties/Medium.png" alt="Medium difficulty flags">
-                    </div>
+                <div class="difficulty-box" id="difficulty-extreme">
+                    <h3>Extreme - 50</h3>
+                    <img src="/assets/images/flag-difficulties/Extreme.png" alt="Extremely difficult flags">
                 </div>
+            </div>
+        </section>
+    </main>
 
-                <div class="difficulty-pair">
-                    <div class="difficulty-box" id="difficulty-hard">
-                        <h3>Hard - 30</h3>
-                        <img src="/assets/images/flag-difficulties/Hard.png" alt="Hard flags">
-                    </div>
-                    <div class="difficulty-box" id="difficulty-extreme">
-                        <h3>Extreme - 50</h3>   
-                        <img src="/assets/images/flag-difficulties/Extreme.png" alt="Extremely difficult flags">
-                    </div>
-                </div>
-            </section>
-        </main>
+    <script src="assets/js/flag-array.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
 
-        <script src="assets/js/flag-array.js"></script>
-        <script src="assets/js/script.js"></script>
-    </body>
 </html>
