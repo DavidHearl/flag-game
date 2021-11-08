@@ -81,7 +81,6 @@ function setupGame() {
             image: flags[i].image
         })
     }
-    console.log(gameFlags)
     runGame()
 }
 

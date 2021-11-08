@@ -1,32 +1,48 @@
 # Flags of the World
 
+## Introduction
+Flags of the world is a fun, interactive and educational game which aims to teach the user about flags from different contries around the globe. The game features difficulties suitable for all ages.
+
 ## Design
 
-Due to the game type and simplicity the main user base will be on the mobile platform. Therefore it is best to optimise the layout for this platform this platform.
+It is essential that a simplistic game has an easy to use UI. This ensures that the user can navigate the page effectivly and quickly. Since this game is designed to be an educational tool, and potentially used by young children it is important to make it as simplistic as it can be.
+
+Due to its nature a simple game like this wil most likley be used on a mobile platform, with this in mind the sensible decision is to optemise the website primarily for mobile use.
+
+One of the future aspirations of this project is to be expanded to more games in the future. This may include other geographical games or other quizes. Therefore it is important that there is a suitable navigation menu if the user needs to navigate to other pages. This can be added as and when more content has been created.
+
+Below are the inital concept designs for the project. They were created with balsamiq wireframes.
 
 ![Mobile Home Page](./assets/images/readme/mobile-homepage.JPG)
-![Home page content](./assets/images/readme/mobile-flag-game.JPG)
+![Mobile Page Content](./assets/images/readme/mobile-flag-game.JPG)
 
-![Home page content](./assets/images/readme/ipad-homepage.JPG)
-![Home page content](./assets/images/readme/ipad-flag-game.JPG)
+![Tablet Home Page](./assets/images/readme/ipad-homepage.JPG)
+![Tablet Page Content](./assets/images/readme/ipad-flag-game.JPG)
 
-![Home page content](./assets/images/readme/desktop-homepage.JPG)
-![Home page content](./assets/images/readme/desktop-flag-game.JPG)
+![PC Home Page](./assets/images/readme/desktop-homepage.JPG)
+![PC Page Content](./assets/images/readme/desktop-flag-game.JPG)
 
 ## Features
 
-* Added diffculty factory to the arrar. In place to calculate a difficulty rating to segrigation into easy normal hard at a later stage.
+* Upon opening the game you are greeted with an interactive box. In this box you can type your name, this will be used later when you are told your score. It can also be used in future iterations where a scoreboard may be added.
+* The user is also presented with four difficulty boxes to choose from. These range from easy to extreme. Based on the difficulty selection the time the user has to answer the questions and the number of questions will change.
+* Once the user gets into a game the counter will start and they will be presented with a flag and five options to choose from. If the user selects the correct answer the box will become green and the score will go up, indicating that the user got the correct answer. If the user got the answer wrong, the box will turn red and the correct box will light up green, the score tally will also not go up.
+* To add a bit of pressure to the user, the game also features a timer. Once the timer gets to 0 then the game will automatically move to the next question. This makes it a lot harder to cheat if the user wanted to.
+* Once the game is over an alert will pop up on the users screen and will tell them there score. If the user decided to enter in there name then the message will be personalised to them.
 
-## Creating the array
-To create the array I coppied all of the image files from the directory and inserted them into excel, from there I used the find and replace feature to remove the .png then created a simple calulation to build up a string.
-= "{country:'" & PROPER(A1) & "',image:'" & A1 & "',fact:''},"
+## Features to come
+
+* A difficulty factor has been added to the array for future use. Each flag starts on a difficulty of 0.5. When a user gets the question correct, the difficulty value will be multiplied by 99% then that value will become the new difficulty value. If a user gets a question wrong the opposite will happen, the value will be multiplied by 101% and that will become the new value. After some time the difficulties will become scattered. This is when a selection rule can be created, taking the lower scoring flags for the easy difficulty and the higher scoring flags for the harder difficulties.
+
+* Leaderboard
+* Previous performace charts
+* Obsfascate data
 
 ## Testing
 
 * In the initial testing 4 participants were selected, the response was positive. However, they had a couple of suggestions, they didn't like the two stage click on the difficulty so the second click was removed. They also did not like all the boxes turning red when they were wrong. They requested more distinction between there selected answer and the correct one.
 * In user testing I selected two participants to trial the game whilst it was in its development stage. I observed the user as they played the game. I noticed that the timer frequently ran out whilst they were playing, the timer didnt have any effect on the game at this point but it was worth noting that 8 seconds is not long enough for self proclaimed novices
 
-## Work in Progress / Completed at a later date
 
 ## Bugs
 
@@ -50,13 +66,3 @@ To counter this, the array was shuffled and 30 flags were selected in order, so 
 * use loop and dont number varables
 * program defensivly
 * Bug discovery
-
-# Possible features
-* Timer/Time out
-* Data could be in a separate file
-* Restart Feature
-* Add wire frame for read me
-* remove all console.log beofre launch
-* Leader Board
-* Charts (Google)
-* Obsfascate data
