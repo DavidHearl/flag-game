@@ -103,7 +103,7 @@ function runGame() {
     }
 
     // Grabs the correct flag from the assets folder
-    var imageLocation = "assets/images/flags/" + gameFlags[gameNumber].image + ".png"
+    var imageLocation = "./assets/images/flags/" + gameFlags[gameNumber].image + ".png"
     document.getElementById("flag-image").src = imageLocation
 
     // Assigns random values to user-choice from the flag array
