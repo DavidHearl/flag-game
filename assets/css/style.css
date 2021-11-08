@@ -114,7 +114,7 @@ input {
     border: 3px solid rgb(39, 231, 13);
     position: relative;
     bottom: 35px;
-    border-radius: 30px;
+    border-radius: 50%;
 }
 
 /*Settings for all home page difficulty boxes*/
@@ -196,7 +196,7 @@ input {
     height: 50px;
     width: 100%;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.6rem;
     border-radius: 10px;
     cursor: pointer;
     color: rgb(62, 125, 197);
@@ -289,7 +289,7 @@ img {
 
     h3 {
         font-size: 1.1rem;
-        margin: 2px 0 8px 4px;
+        margin: 2px 0 4px 4px;
     }
 
     #progress-bar {

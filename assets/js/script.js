@@ -9,6 +9,7 @@ var correctAnswer;
 var gameFlags = [];
 var gameNumber = 0;
 var numberOfQuestions;
+var time;
 
 // Opens and closes difficulty menu when clicked
 trigger.addEventListener("click", function () {
@@ -124,7 +125,7 @@ function runGame() {
  * Runs timer
  */
 function timer() {
-    let time;
+    
     if (numberOfQuestions == 10) {
         time = 15;
     } else if (numberOfQuestions == 20) {
@@ -136,23 +137,23 @@ function timer() {
     }
 
     let downloadTimer = setInterval(function () {
-
         if (time <= 0) {
             clearInterval(downloadTimer);
             document.getElementById("timer").innerHTML = "0.00";
         } else {
             document.getElementById("timer").innerHTML = time.toFixed(2);
-            if (time <= 4) {
+            time -= 0.01;
+            if (time <= 5.5) {
                 document.getElementById("timer-border").style.borderColor = "orange"
             } 
-            if (time <= 2) {
+            if (time <= 3) {
                 document.getElementById("timer-border").style.borderColor = "red"
             } 
             if (time <= 0.01) {
+                clearInterval(downloadTimer)
                 runGame()
             }
         }
-        time -= 0.01;
     }, 5);
 }
 
@@ -163,22 +164,27 @@ let score = parseInt(document.getElementById("score").innerHTML)
 let index;
 userChoice[0].addEventListener("click", event => {
     index = 0;
+    time = 1;
     validation()
 })
 userChoice[1].addEventListener("click", event => {
     index = 1;
+    time = 1;
     validation()
 })
 userChoice[2].addEventListener("click", event => {
     index = 2;
+    time = 1;
     validation()
 })
 userChoice[3].addEventListener("click", event => {
     index = 3;
+    time = 1;
     validation()
 })
 userChoice[4].addEventListener("click", event => {
     index = 4;
+    time = 1;
     validation()
 })
 
@@ -197,7 +203,7 @@ function validation() {
             }
         }
     }
-    setTimeout(function () {
-        runGame();
-    }, 900);
+    //setTimeout(function () {
+    //    runGame();
+    //}, 900);
 }
