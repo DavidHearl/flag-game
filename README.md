@@ -7,11 +7,11 @@ Flags of the world is a fun, interactive and educational game which aims to teac
 
 It is essential that a simplistic game has an easy to use UI. This ensures that the user can navigate the page effectivly and quickly. Since this game is designed to be an educational tool, and potentially used by young children it is important to make it as simplistic as it can be.
 
-Due to its nature a simple game like this wil most likley be used on a mobile platform, with this in mind the sensible decision is to optemise the website primarily for mobile use.
+Due to its nature a simple game like this will most likely be used on a mobile platform, with this in mind the sensible decision is to optimise the website primarily for mobile use.
 
 One of the future aspirations of this project is to be expanded to more games in the future. This may include other geographical games or other quizes. Therefore it is important that there is a suitable navigation menu if the user needs to navigate to other pages. This can be added as and when more content has been created.
 
-Below are the inital concept designs for the project. They were created with balsamiq wireframes.
+Below are the initial concept designs for the project. They were created with balsamiq wireframes.
 
 ![Mobile Home Page](./assets/images/readme/mobile-homepage.JPG)
 ![Mobile Page Content](./assets/images/readme/mobile-flag-game.JPG)
@@ -66,3 +66,7 @@ To counter this, the array was shuffled and 30 flags were selected in order, so 
 * use loop and dont number varables
 * program defensivly
 * Bug discovery
+
+## Credits
+
+Flags were taking from https://www.worldometers.info/geography/flags-of-the-world/

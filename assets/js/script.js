@@ -15,16 +15,6 @@ var time;
 trigger.addEventListener("click", function () {
     location.reload()
 })
-//     if (menu.style.opacity == 0) {
-//         menu.style.opacity = 1;
-//         menu.style.zIndex = 1;
-//         trigger.innerHTML = "Close Menu";
-//     } else {
-//         menu.style.opacity = 0;
-//         menu.style.zIndex = 0;
-//         trigger.innerHTML = "Select Difficulty";
-//     }
-// })
 
 // Turns difficulty boxes on, home page opaique, signaling selection of difficulty.
 let hover = document.getElementsByClassName("difficulty-box");
