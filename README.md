@@ -88,7 +88,7 @@ Below are the initial concept designs for the project. They were created with Ba
 
 ## Deployment 
 
-The website was deployed through the GitHub 'pages' feature. It can be acessed through the link below. https://davidhearl.github.io/chiropractic-website/
+The website was deployed through the GitHub 'pages' feature. It can be acessed through the link below. https://davidhearl.github.io/flag-game/
 
 ## Credits
 
