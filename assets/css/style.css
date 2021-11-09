@@ -246,15 +246,15 @@ input {
 }
 
 #flag {
-    text-align: center;
-    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 /*Set max width and height of image so they don't leak out of a div*/
 img {
     max-width: 100%;
     max-height: 400px;
-    margin: 0 auto;
 }
 
 .scores {
@@ -304,10 +304,6 @@ img {
         width: 40px;
         bottom: 25px;
         border-radius: 25px;
-    }
-
-    #flag {
-        margin-bottom: 5px;
     }
 
     label {
