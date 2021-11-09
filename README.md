@@ -59,13 +59,14 @@ Below are the initial concept designs for the project. They were created with Ba
 * In the final user testing a couple of issues were highlighted. The users were not a fan of the alert that appeared on the screen. They found it "Ugly" and "Not pleasant to look at". This alert was then replaced with a popup menu that gave the user the option to play again. This change was welcomed when I presented it back to the testers.
 
 ### Validators and Tools
-* The Wave tool is used to evaluate the website and help make changes. The tool returns 6 errors when on the home page. This is due to the empty 'user choice' fields. Until the game difficulty has been selected they will remain unpopulated which results in an error in the tool. 5 of those errors disapear where a difficulty is selected. The other error is due to the unpopulation of the score. There are also some issuses with contrast, since some of the elements are hidden or have there opacity set to 0 the contrast is returned as weak.
+* The Wave tool is used to evaluate the website and help make changes. The tool returns 6 errors when on the home page. This is due to the empty 'user choice' fields. Until the game difficulty has been selected they will remain unpopulated which results in an error in the tool. 5 of those errors disappear where a difficulty is selected. The other error is due to the unpopulation of the score. There are also some issues with contrast, since some of the elements are hidden or have their opacity set to 0 the contrast is returned as weak.
 
-* web.dev
+* The web.dev tool returned good results without any errors.
+![Web Dev Score](./assets/images/readme/web-dev-score.png)
 
-* html validator
+* One error and one warning were discovered by the HTML validator. The error was for the unpopulated src of the flag. This will not be populated till a difficulty has been selected therefore it can be ignored. The warning is for a similar issue, except this time it is on the score-message, this is not populated till the end of the game so can also be ignored.  https://validator.w3.org/nu/
 
-* css validator
+* No errors were found in the CSS validator. https://jigsaw.w3.org/css-validator/
 
 
 ## Bugs / Optemisations
@@ -75,18 +76,6 @@ Below are the initial concept designs for the project. They were created with Ba
 * There is an issue with event listeners and the validation function. Currently, the event listener is copied down and an index value is set, this is used in the validation function to differentiate between the user choice. I attempted to add the event listener into a for loop to avoid the same lines being repeated. Whenever that change is made, the selection of 'userChoice' breaks and doesn't work how it is intended. As it works at the moment this can be categorised as optimisation and can be completed at a later date.
 
 * A minor bug is at the end of the game. When the popup menu opens, the user can continue to click the answers and they will turn either red or green depending on whether the user got the answer correct. This error does not affect the game in any capacity so it isn't essential to fix it.
-
-
-## Notes
-
-# Remember
-* Variable names
-* Information Architecture
-* Splash page required
-* Accessibility
-* Usage of web standards
-* 'linter' gitpod
-* program defensively
 
 ## Credits
 

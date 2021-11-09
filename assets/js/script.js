@@ -16,13 +16,13 @@ trigger.addEventListener("click", function () {
     location.reload()
 })
 
-// Play again button
+// Reloads page when play again button is clicked
 let playAgain = document.getElementById("play-again")
 playAgain.addEventListener("click", function () {
     location.reload()
 })
 
-// Turns difficulty boxes on, home page opaique, signaling selection of difficulty.
+// Sets the difficulty level and changed the title.
 let hover = document.getElementsByClassName("difficulty-box");
 let title = document.getElementById("difficulty-level")
 
@@ -51,6 +51,7 @@ hover[3].addEventListener("click", event => {
     hideMenu()
 })
 
+/** Hides the difficult menu that is seen when the page first loads. */
 function hideMenu() {
     document.getElementById("number-of-questions").textContent = "/" + numberOfQuestions;
     menu.style.zIndex = -2;
@@ -58,9 +59,7 @@ function hideMenu() {
     setupGame()
 }
 
-/**
- * Creates an array of 'x' random flags based on difficulty level selected
- */
+/** Creates an array of 'x' random flags based on difficulty level selected. */
 function setupGame() {
     // Gets number of elements in the flag array
     var currentIndex = flags.length;
@@ -80,9 +79,7 @@ function setupGame() {
     runGame()
 }
 
-/**
- * Ends game if score limit has been reached and runs game.
- */
+/** Ends game if score limit has been reached. Selects flag and chooses random answers. */
 function runGame() {
     // Alerts the user that a the game has finished
     if (gameNumber >= numberOfQuestions) {
@@ -118,9 +115,7 @@ function runGame() {
     timer()
 }
 
-/**
- * Runs timer
- */
+/** Runs timer, will run the next game when the timer hits 0. */
 function timer() {
 
     if (numberOfQuestions == 10) {
@@ -185,6 +180,7 @@ userChoice[4].addEventListener("click", event => {
     validation()
 })
 
+/** Validates the answer then sets the color of the boxes */
 function validation() {
     if (userChoice[index].innerText == correctAnswer) {
         document.getElementById("score").innerText = ++score;

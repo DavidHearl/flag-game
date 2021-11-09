@@ -14,6 +14,7 @@ body {
     z-index: 0;
 }
 
+/*Set position and style for difficulty menu*/
 #difficulty-menu {
     position: absolute;
     top: 40px;
@@ -23,8 +24,10 @@ body {
     border: 2px solid rgb(255, 255, 255);
     border-radius: 15px;
     box-shadow: 0 0 20px #000000;
+    width: 100%;
 }
 
+/*Popup menu size and position*/
 #endgame-popup {
     background-image: linear-gradient(0deg, #5f077a, #4f3a9c);
     width: 90%;
@@ -39,6 +42,7 @@ body {
     visibility: hidden;
 }
 
+/*Pop up styles for the play again button*/
 #play-again {
     position: absolute;
     height: 40px;
@@ -55,7 +59,7 @@ body {
     border: 1px solid black;
 }
 
-#score-message{
+#score-message {
     width: 80%;
     margin-left: 10%;
 }
