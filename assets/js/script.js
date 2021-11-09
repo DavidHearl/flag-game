@@ -16,6 +16,12 @@ trigger.addEventListener("click", function () {
     location.reload()
 })
 
+// Play again button
+let playAgain = document.getElementById("play-again")
+playAgain.addEventListener("click", function () {
+    location.reload()
+})
+
 // Turns difficulty boxes on, home page opaique, signaling selection of difficulty.
 let hover = document.getElementsByClassName("difficulty-box");
 let title = document.getElementById("difficulty-level")
@@ -80,8 +86,8 @@ function setupGame() {
 function runGame() {
     // Alerts the user that a the game has finished
     if (gameNumber >= numberOfQuestions) {
-        alert(`You completed the game and scored: ${(score/numberOfQuestions)*100}%`)
-        location.reload()
+        document.getElementById("endgame-popup").style.visibility = "visible"
+        document.getElementById("score-message").innerHTML = `You completed ${title.innerHTML} mode and scored: ${(score/numberOfQuestions)*100}%`
     }
 
     document.getElementById("timer-border").style.borderColor = "green"
@@ -194,7 +200,4 @@ function validation() {
             }
         }
     }
-    //setTimeout(function () {
-    //    runGame();
-    //}, 900);
 }

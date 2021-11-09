@@ -25,6 +25,41 @@ body {
     box-shadow: 0 0 20px #000000;
 }
 
+#endgame-popup {
+    background-image: linear-gradient(0deg, #5f077a, #4f3a9c);
+    width: 90%;
+    height: 200px;
+    z-index: 10;
+    position: absolute;
+    top: 60px;
+    margin-left: 5%;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid black;
+    visibility: hidden;
+}
+
+#play-again {
+    position: absolute;
+    height: 40px;
+    width: 90%;
+    left: 5%;
+    bottom: 10px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    color: rgb(18, 89, 170);
+    border: 1px solid black;
+}
+
+#score-message{
+    width: 80%;
+    margin-left: 10%;
+}
+
 /*Set header size and position, also add underline to header to separate sections*/
 header {
     text-align: center;
@@ -176,7 +211,6 @@ input {
 
 /*Set play button styles*/
 #restart {
-    /*#choose-difficulty was removes from here*/
     height: 30px;
     width: 100%;
     font-weight: 800;
@@ -186,11 +220,11 @@ input {
     background-color: white;
     cursor: pointer;
     color: rgb(18, 89, 170);
+    border: 1px solid black;
 }
 
 /*Set answer buttons on flag game page*/
 .user-choice {
-    /*Background color in js file*/
     margin: 8px 0;
     height: 50px;
     width: 100%;
@@ -199,7 +233,7 @@ input {
     border-radius: 10px;
     cursor: pointer;
     color: rgb(18, 89, 170);
-    border: none;
+    border: 1px solid black;
 }
 
 /*Progress bar styling, added width so it finishes at the correct spot*/
