@@ -26,11 +26,20 @@ Below are the initial concept designs for the project. They were created with Ba
 
 * The user is also presented with four difficulty boxes to choose from. These range from easy to extreme. Based on the difficulty selection the time the user has to answer the questions and the number of questions will change.
 
+![Difficulty Menu](./assets/images/readme/difficulty-menu.JPG)
+
 * Once the user gets into a game the counter will start and they will be presented with a flag and five answers to choose from. If the user selects the correct answer the box will change colour and turn green, then the score will go up, indicating that the user got the correct answer. If the user got the answer wrong, the box will turn red, then the correct box will turn up green. The score tally will also not go up.
+
+![Game](./assets/images/readme/game.JPG)
 
 * To add a bit of pressure to the user, the game also features a timer. Once the timer gets to 0 then the game will automatically move to the next question. This makes it a lot harder to cheat if the user wanted to.
 
+![Timer](./assets/images/readme/timer.JPG)
+
 * Once the game is over an alert will pop up on the users' screen and will tell them their score. The user then has the choice to play again.
+
+![Popup Menu](./assets/images/readme/popup-menu.JPG)
+
 
 ## Features to come
 
@@ -76,6 +85,10 @@ Below are the initial concept designs for the project. They were created with Ba
 * There is an issue with event listeners and the validation function. Currently, the event listener is copied down and an index value is set, this is used in the validation function to differentiate between the user choice. I attempted to add the event listener into a for loop to avoid the same lines being repeated. Whenever that change is made, the selection of 'userChoice' breaks and doesn't work how it is intended. As it works at the moment this can be categorised as optimisation and can be completed at a later date.
 
 * A minor bug is at the end of the game. When the popup menu opens, the user can continue to click the answers and they will turn either red or green depending on whether the user got the answer correct. This error does not affect the game in any capacity so it isn't essential to fix it.
+
+## Deployment 
+
+The website was deployed through the GitHub 'pages' feature. It can be acessed through the link below. https://davidhearl.github.io/chiropractic-website/
 
 ## Credits
 
