@@ -58,6 +58,8 @@ Below are the initial concept designs for the project. They were created with Ba
 
 * In the final user testing a couple of issues were highlighted. The users were not a fan of the alert that appeared on the screen. They found it "Ugly" and "Not pleasant to look at". This alert was then replaced with a popup menu that gave the user the option to play again. This change was welcomed when I presented it back to the testers.
 
+### Validators and Tools
+* The Wave tool is used to evaluate the website and help make changes. The tool returns 6 errors when on the home page. This is due to the empty 'user choice' fields. Until the game difficulty has been selected they will remain unpopulated which results in an error in the tool. 5 of those errors disapear where a difficulty is selected. The other error is due to the unpopulation of the score. There are also some issuses with contrast, since some of the elements are hidden or have there opacity set to 0 the contrast is returned as weak.
 * web.dev
 * html validator
 * css validator
